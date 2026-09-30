@@ -3,202 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simaloc AI - منصة الترجمة والتزمين الذكي</title>
+    <title>Simaloc - المنصة الاحترافية لتكييف الترجمة والدوبلاج</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #4F46E5;
-            --primary-hover: #4338CA;
-            --bg: #0F172A;
-            --card-bg: #1E293B;
-            --text: #F8FAFC;
-            --text-muted: #94A3B8;
+            --primary: #6366F1;
+            --primary-dark: #4F46E5;
             --accent: #10B981;
+            --bg-main: #0B0F19;
+            --bg-card: #151D2A;
+            --bg-input: #1E293B;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
         }
 
         header {
-            width: 100%;
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border);
             padding: 20px 0;
-            text-align: center;
-            background-color: var(--card-bg);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.2rem;
+        .nav-container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
             color: var(--primary);
-            letter-spacing: 1px;
+            letter-spacing: -0.5px;
         }
 
-        header p {
-            margin: 5px 0 0;
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFF, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
             color: var(--text-muted);
-            font-size: 0.95rem;
+            margin-bottom: 30px;
         }
 
         .container {
             width: 90%;
-            max-width: 650px;
-            margin: 40px auto;
-            background: var(--card-bg);
-            padding: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-bottom: 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--text-main);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card .price-rate {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        .order-section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 600;
-            color: var(--text);
+            color: var(--text-main);
         }
 
-        select, input[type="number"] {
+        input[type="text"], input[type="url"], input[type="number"], select, textarea {
             width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #334155;
-            background-color: #0F172A;
-            color: var(--text);
+            padding: 14px;
+            background-color: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-main);
             font-size: 1rem;
-            box-sizing: border-box;
         }
 
-        select:focus, input:focus {
+        input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--primary);
         }
 
-        .pricing-box {
-            background-color: #0F172A;
-            border: 1px border-solid var(--primary);
+        .calc-summary {
+            background-color: var(--bg-input);
+            border: 1px dashed var(--primary);
             border-radius: 12px;
             padding: 20px;
             text-align: center;
-            margin-top: 25px;
+            margin: 25px 0;
         }
 
-        .pricing-box h3 {
-            margin: 0 0 10px;
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        .price-tag {
-            font-size: 2.5rem;
-            font-weight: bold;
+        .calc-summary span {
+            display: block;
+            font-size: 2.2rem;
+            font-weight: 800;
             color: var(--accent);
-            margin: 10px 0;
+            margin-top: 5px;
         }
 
         .btn-submit {
             width: 100%;
-            padding: 15px;
+            padding: 16px;
             background-color: var(--primary);
-            color: white;
+            color: #FFF;
             border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 700;
             cursor: pointer;
-            transition: background 0.2s;
-            margin-top: 20px;
+            transition: background-color 0.2s;
         }
 
         .btn-submit:hover {
-            background-color: var(--primary-hover);
+            background-color: var(--primary-dark);
         }
 
-        .payment-info {
+        .payment-box {
             display: none;
-            margin-top: 20px;
-            padding: 15px;
-            background: #1E293B;
-            border: 1px dashed var(--accent);
+            margin-top: 30px;
+            background-color: var(--bg-input);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .wallet-address {
+            background-color: var(--bg-main);
+            padding: 12px;
             border-radius: 8px;
+            font-family: monospace;
+            color: var(--accent);
             word-break: break-all;
+            margin: 15px 0;
             text-align: center;
         }
 
-        .crypto-address {
-            background: #0F172A;
-            padding: 10px;
-            border-radius: 6px;
-            font-family: monospace;
-            color: var(--accent);
-            margin-top: 10px;
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Simaloc AI</h1>
-        <p>المنصة الذكية لتكييف الترجمة والدوبلاج بالدقيقة (Pay-As-You-Go)</p>
+        <div class="nav-container">
+            <div class="logo">Simaloc</div>
+            <div>
+                <a href="#order" style="color: var(--text-main); text-decoration: none; font-weight: 600;">إنشاء طلب جديد</a>
+            </div>
+        </div>
     </header>
 
+    <section class="hero">
+        <h1>حلول تكييف الميديا والترجمة بالذكاء الاصطناعي والدعم البشري</h1>
+        <p>نُكيّف محتواك المسموع والمرئي بدقة احترافية للأسواق العربية والعالمية بخيار الدفع حسب الاستخدام (Pay-As-You-Go).</p>
+    </section>
+
     <div class="container">
-        <h2>حاسبة تكلفة المشروع</h2>
-        
-        <div class="form-group">
-            <label for="service">اختر نوع الخدمة:</label>
-            <select id="service" onchange="calculatePrice()">
-                <option value="0.30">ترجمة + تفريغ + تزمين آلي ($0.30 / دقيقة)</option>
-                <option value="0.75">ترجمة آلية + تدقيق بشري ($0.75 / دقيقة)</option>
-                <option value="1.50">تكييف وإعداد نصوص الدوبلاج ($1.50 / دقيقة)</option>
-            </select>
+        <h2 class="section-title">خدمات المنصة</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>1. التفريغ والتزمين الآلي</h3>
+                <p>تحويل المحتوى الصوتي والمرئي إلى نصوص مكتوبة ومزمنة (SRT/VTT) بدقة عالية باستخدام أحدث تقنيات المعالجة اللغوية للذكاء الاصطناعي.</p>
+                <div class="price-rate">$0.30 / دقيقة</div>
+            </div>
+            <div class="service-card">
+                <h3>2. الترجمة والتدقيق البشري (HITL)</h3>
+                <p>ترجمة احترافية للميديا تبدأ بالمعالجة الذكية متبوعة بمراجعة وتدقيق كامل من لغويين متخصصين لضمان ملاءمة السياق والمعنى الصحيح.</p>
+                <div class="price-rate">$0.75 / دقيقة</div>
+            </div>
+            <div class="service-card">
+                <h3>3. تكييف الدوبلاج والتعليق الصوتي</h3>
+                <p>إعداد وتكييف النصوص لتناسب التزامن الشفهي (Lip-sync) والأداء الصوتي للممثلين والمُعلّقين في الاستوديوهات.</p>
+                <div class="price-rate">$1.50 / دقيقة</div>
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="duration">مدة الفيديو (بالدقائق):</label>
-            <input type="number" id="duration" value="10" min="1" oninput="calculatePrice()">
-        </div>
+        <div class="order-section" id="order">
+            <h2 style="text-align: center; margin-bottom: 25px;">تقديم طلب جديد وحساب التكلفة</h2>
+            <form id="simalocForm" onsubmit="event.preventDefault(); processOrder();">
+                
+                <div class="form-group">
+                    <label for="serviceSelect">نوع الخدمة المطلوبة:</label>
+                    <select id="serviceSelect" onchange="updateTotal()">
+                        <option value="0.30">التفريغ والترجمة والتزمين الآلي ($0.30 / دقيقة)</option>
+                        <option value="0.75">الترجمة والتدقيق البشري الاحترافي ($0.75 / دقيقة)</option>
+                        <option value="1.50">تكييف وإعداد نصوص الدوبلاج ($1.50 / دقيقة)</option>
+                    </select>
+                </div>
 
-        <div class="pricing-box">
-            <h3>التكلفة الإجمالية التقديرية</h3>
-            <div class="price-tag" id="total-price">$3.00</div>
-            <small style="color: var(--text-muted);">سعر الدقيقة يحسب بناءً على الخدمة المحددة</small>
-        </div>
+                <div class="form-group">
+                    <label for="mediaDuration">مدة الملف الصوتي / الفيديو (بالدقائق):</label>
+                    <input type="number" id="mediaDuration" min="1" value="10" oninput="updateTotal()" required>
+                </div>
 
-        <button class="btn-submit" onclick="showPayment()">متابعة والدفع عبر USDT</button>
+                <div class="form-group">
+                    <label for="fileUrl">رابط الملف (Google Drive / Dropbox / YouTube / Vimeo):</label>
+                    <input type="url" id="fileUrl" placeholder="https://..." required>
+                </div>
 
-        <div class="payment-info" id="paymentBox">
-            <p>يرجى تحويل المبلغ الموضح أعلاه عبر شبكة <strong>TRC20</strong> إلى المحفظة التالية:</p>
-            <div class="crypto-address" id="walletAddress">YOUR_USDT_TRC20_WALLET_ADDRESS_HERE</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 10px;">
-                بعد التحويل، أرسل رقم العملية (TxID) ورابط الملف إلى الدعم لإتمام الخدمة فوراً.
-            </p>
+                <div class="form-group">
+                    <label for="notes">ملاحظات أو تعليمات خاصة لعملية التكييف والترجمة:</label>
+                    <textarea id="notes" rows="3" placeholder="أدخل أي أسماء خاصة، أسماء شخصيات، أو توجيهات سياقية..."></textarea>
+                </div>
+
+                <div class="calc-summary">
+                    التكلفة الإجمالية التقديرية
+                    <span id="totalDisplay">$3.00</span>
+                </div>
+
+                <button type="submit" class="btn-submit">تأكيد الطلب والدفع عبر USDT</button>
+            </form>
+
+            <div class="payment-box" id="paymentBox">
+                <h3 style="color: var(--accent); margin-bottom: 10px; text-align: center;">تفاصيل الدفع (USDT - TRC20)</h3>
+                <p style="font-size: 0.95rem;">يرجى تحويل المبلغ المحدد إلى عنوان المحفظة التالي:</p>
+                <div class="wallet-address" id="walletAddr">YOUR_USDT_TRC20_WALLET_ADDRESS_HERE</div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <label for="txid">رقم المعاملة (TxID) بعد التحويل:</label>
+                    <input type="text" id="txid" placeholder="أدخل معرّف التحويل لإتمام تأكيد الطلب">
+                </div>
+                <button type="button" class="btn-submit" style="background-color: var(--accent);" onclick="confirmTransaction()">تأكيد عملية التحويل</button>
+            </div>
         </div>
     </div>
 
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 Simaloc - منصة تكييف وتنسيق الميديا</p>
+    </footer>
+
     <script>
-        function calculatePrice() {
-            const rate = parseFloat(document.getElementById('service').value);
-            const duration = parseFloat(document.getElementById('duration').value) || 0;
+        function updateTotal() {
+            const rate = parseFloat(document.getElementById('serviceSelect').value);
+            const duration = parseFloat(document.getElementById('mediaDuration').value) || 0;
             const total = (rate * duration).toFixed(2);
-            document.getElementById('total-price').innerText = '$' + total;
+            document.getElementById('totalDisplay').innerText = '$' + total;
         }
 
-        function showPayment() {
+        function processOrder() {
             document.getElementById('paymentBox').style.display = 'block';
+            window.scrollTo({
+                top: document.getElementById('paymentBox').offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }
+
+        function confirmTransaction() {
+            const txid = document.getElementById('txid').value.trim();
+            if (!txid) {
+                alert('يرجى إدخال رقم المعاملة (TxID) لتأكيد التحويل.');
+                return;
+            }
+            alert('تم استلام معلومات الطلب والتحويل بنجاح! سيقوم فريق Simaloc بمراجعة العملية والبدء في المعالجة فوراً.');
         }
     </script>
-
 </body>
 </html>
