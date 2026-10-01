@@ -149,15 +149,15 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
         }
 
         .service-card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 30px;
+            padding: 25px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -169,234 +169,43 @@
         }
 
         .service-title {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--primary);
             margin-bottom: 12px;
         }
 
         .service-price {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--accent);
-            margin-top: 20px;
-        }
-
-        .portal-wrapper {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 40px;
-            margin-top: 60px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        .upload-zone {
-            border: 2px dashed var(--primary);
-            border-radius: 16px;
-            padding: 45px 20px;
-            text-align: center;
-            background-color: rgba(15, 23, 42, 0.6);
-            cursor: pointer;
-            transition: background-color 0.2s, border-color 0.2s;
-            margin-bottom: 25px;
-        }
-
-        .upload-zone:hover, .upload-zone.dragover {
-            background-color: rgba(79, 70, 229, 0.1);
-            border-color: #818CF8;
-        }
-
-        .upload-icon {
-            font-size: 3.2rem;
-            color: var(--primary);
-            margin-bottom: 12px;
-        }
-
-        .file-input {
-            display: none;
-        }
-
-        .file-details {
-            display: none;
-            background-color: var(--bg-input);
-            padding: 15px 20px;
-            border-radius: 10px;
-            border: 1px solid var(--accent);
-            margin-bottom: 25px;
-            text-align: right;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 700;
-            font-size: 0.95rem;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 14px 15px;
-            background-color: var(--bg-input);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            color: var(--text-light);
-            font-size: 1rem;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .calc-box {
-            background-color: var(--bg-input);
-            border: 1px solid var(--primary);
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .calc-price {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--accent);
-            margin: 5px 0;
-        }
-
-        .btn-action {
-            width: 100%;
-            padding: 16px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.15rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .btn-action:hover {
-            background-color: var(--primary-hover);
-        }
-
-        .payment-module {
-            display: none;
-            margin-top: 30px;
-            padding: 30px;
-            background-color: var(--bg-input);
-            border: 1px solid var(--accent);
-            border-radius: 14px;
-        }
-
-        .wallet-box {
-            background-color: var(--bg-dark);
-            padding: 15px;
-            border-radius: 8px;
-            font-family: monospace;
-            color: var(--accent);
-            word-break: break-all;
-            text-align: center;
-            font-size: 1.15rem;
-            margin: 20px 0;
-            border: 1px solid var(--border-color);
-        }
-
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 30px 0;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo">Simaloc</a>
-            <nav class="nav-links">
-                <a href="#services">الخدمات</a>
-                <a href="#workflow">آلية العمل</a>
-                <a href="#portal">رفع المحتوى المرئي والمسموع</a>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <span class="badge">المنصة الاحترافية لإعداد الترجمة والتزمين</span>
-        <h1>إعداد الترجمة والتفريغ والدوبلاج للمحتوى المرئي والمسموع بدقة الذكاء الاصطناعي والإشراف البشري</h1>
-        <p>رفع مباشر للملفات، تدقيق لغوي احترافي (Human-In-The-Loop)، ونظام دفع مباشر ومرن بحسب مدة المحتوى المرئي والمسموع (Pay-As-You-Go).</p>
-    </section>
-
-    <div class="container">
-
-        <div id="workflow">
-            <div class="section-header">
-                <h2>كيف تعمل منصة Simaloc؟</h2>
-                <p>سير عمل هجين يضمن الموازنة بين السرعة الفائقة والدقة اللغوية للمحتوى المرئي والمسموع</p>
-            </div>
-            <div class="workflow-grid">
-                <div class="step-card">
-                    <div class="step-number">01</div>
-                    <h3>رفع المحتوى المرئي والمسموع</h3>
-                    <p>قم برفع ملف الفيديو أو الصوت الخاص بمشروعك مباشرة بصيغ (MP4, MP3, MOV, WAV).</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">02</div>
-                    <h3>المعالجة بالذكاء الاصطناعي</h3>
-                    <p>تفريغ الصوت وتوليد المسودة الأولى للترجمة والتزمين التفصيلي تلقائياً.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">03</div>
-                    <h3>التدقيق والإعداد البشري</h3>
-                    <p>يقوم خبراء اللغة بتدقيق المصطلحات وإعداد النص ليناسب السياق الثقافي ومطابقة حركة الشفاه.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">04</div>
-                    <h3>تسليم التسجيل والملفات</h3>
-                    <p>تنزيل ملفات الترجمة (SRT, VTT) أو الفيديو المترجم جاهزاً للعرض والإثراء الصوتي.</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="services">
-            <div class="section-header">
-                <h2>خدمات المنصة</h2>
-                <p>اختر مستوى الإعداد المناسب لاحتياجات مشروعك</p>
+                <p>اختر المستوى المناسب لإعداد وتنسيق مشروعك</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div>
-                        <h3 class="service-title">1. التفريغ والتزمين الآلي</h3>
-                        <p style="color: var(--text-muted);">تحويل المحتوى المرئي والمسموع إلى نصوص مكتوبة مع طوابع زمنية دقيقة تلقائياً. مناسب للمسودات السريعة والأرشيف.</p>
+                        <h3 class="service-title">1. ترجمة وتزمين مرئي بالذكاء الاصطناعي</h3>
+                        <p style="color: var(--text-muted);">معالجة آلية كاملة وسريعة للمحتوى المرئي والمسموع، وتوليد ملفات الترجمة والتزمين فوراً دون أي تدخل بشري.</p>
                     </div>
                     <div class="service-price">$0.30 / دقيقة</div>
                 </div>
                 <div class="service-card">
                     <div>
-                        <h3 class="service-title">2. الترجمة والتدقيق البشري (HITL)</h3>
-                        <p style="color: var(--text-muted);">ترجمة وإعداد معالج بالذكاء الاصطناعي ومراجع بالكامل بواسطة مترجمين بشريين لضمان دقة السياق والخلو من الأخطاء.</p>
+                        <h3 class="service-title">2. ترجمة وتزمين بالذكاء الاصطناعي + مراجعة بشرية</h3>
+                        <p style="color: var(--text-muted);">ترجمة آلية أولية يتم إخضاعها لمراجعة بشرية دقيقة من قبل متخصصين لضمان صحة الترجمة ومطابقة المعنى تماماً.</p>
                     </div>
                     <div class="service-price">$0.75 / دقيقة</div>
                 </div>
                 <div class="service-card">
                     <div>
-                        <h3 class="service-title">3. إعداد الدوبلاج والتعليق الصوتي</h3>
-                        <p style="color: var(--text-muted);">إعداد وتعديل النصوص لتناسب مطابقة حركة الشفاه (Lip-sync) والأداء الصوتي للاستوديوهات والممثلين.</p>
+                        <h3 class="service-title">3. التدقيق اللغوي</h3>
+                        <p style="color: var(--text-muted);">فحص المادة المترجمة والتأكد من خلو النص بالكامل من الأخطاء الكتابية والقواعدية وتصحيح العبارات والصياغة.</p>
+                    </div>
+                    <div class="service-price">$0.50 / دقيقة</div>
+                </div>
+                <div class="service-card">
+                    <div>
+                        <h3 class="service-title">4. إعداد النصوص من أجل الدوبلاج</h3>
+                        <p style="color: var(--text-muted);">إعداد وتكييف النصوص والمزامنة الصوتية بدقة لتناسب حركة الشفاه (Lip-sync) وتسهيل عمل المعلقين والممثلين الصوتين.</p>
                     </div>
                     <div class="service-price">$1.50 / دقيقة</div>
                 </div>
@@ -424,9 +233,10 @@
                     <div class="form-group">
                         <label for="serviceSelect">نوع الخدمة المطلوبة:</label>
                         <select id="serviceSelect" onchange="calculateTotal()">
-                            <option value="0.30">التفريغ والتزمين الآلي ($0.30/دقيقة)</option>
-                            <option value="0.75" selected>الترجمة والتدقيق البشري ($0.75/دقيقة)</option>
-                            <option value="1.50">إعداد نصوص الدوبلاج ($1.50/دقيقة)</option>
+                            <option value="0.30">1. ترجمة وتزمين مرئي بالذكاء الاصطناعي (آلي بالكامل - $0.30/دقيقة)</option>
+                            <option value="0.75" selected>2. ترجمة وتزمين بالذكاء الاصطناعي + مراجعة بشرية ($0.75/دقيقة)</option>
+                            <option value="0.50">3. التدقيق اللغوي (تأكيد خلو الأخطاء الكتابية والقواعدية - $0.50/دقيقة)</option>
+                            <option value="1.50">4. إعداد النصوص من أجل الدوبلاج ($1.50/دقيقة)</option>
                         </select>
                     </div>
 
@@ -496,6 +306,44 @@
     </footer>
 
     <script>
+        const dropZone = document.getElementById('dropZone');
+        
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                dropZone.classList.add('dragover');
+            }, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('dragover');
+            }, false);
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            if (files.length > 0) {
+                document.getElementById('fileInput').files = files;
+                updateFileDisplay(files[0]);
+            }
+        });
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                updateFileDisplay(file);
+            }
+        }
+
+        function updateFileDisplay(file) {
+            document.getElementById('fileName').innerText = file.name;
+            document.getElementById('fileSize').innerText = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
+            document.getElementById('fileDetails').style.display = 'block';
+        }
+
         function calculateTotal() {
             const rate = parseFloat(document.getElementById('serviceSelect').value);
             const duration = parseFloat(document.getElementById('durationInput').value) || 0;
