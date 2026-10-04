@@ -336,50 +336,53 @@
             border: 1px solid var(--border-color);
         }
 
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+        /* Freelance Section */
+        .freelance-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 60px;
         }
 
-        .contact-card {
+        /* Contact Section */
+        .contact-box {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 30px;
+            padding: 40px 20px;
             text-align: center;
-            transition: transform 0.2s, border-color 0.2s;
+            max-width: 600px;
+            margin: 30px auto 0;
+            transition: border-color 0.2s;
         }
 
-        .contact-card:hover {
-            transform: translateY(-5px);
+        .contact-box:hover {
             border-color: var(--primary);
         }
 
         .contact-icon {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 15px;
             display: block;
         }
 
         .contact-link {
             display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: var(--bg-input);
-            color: var(--accent);
-            border: 1px solid var(--accent);
+            margin-top: 20px;
+            padding: 12px 28px;
+            background-color: #25D366;
+            color: white;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            transition: background-color 0.2s;
+            font-size: 1.1rem;
+            transition: background-color 0.2s, transform 0.2s;
         }
 
         .contact-link:hover {
-            background-color: var(--accent);
-            color: var(--bg-dark);
+            background-color: #1EBE5D;
+            transform: translateY(-2px);
         }
 
         /* Floating WhatsApp Button */
@@ -445,6 +448,7 @@
                     <a href="#services" id="nav-services">Services</a>
                     <a href="#workflow" id="nav-workflow">How It Works</a>
                     <a href="#portal" id="nav-portal">Upload Content</a>
+                    <a href="#freelance" id="nav-freelance">Join as Freelancer</a>
                     <a href="#contact" id="nav-contact">Contact Us</a>
                 </nav>
                 <button class="lang-switch-btn" onclick="toggleLanguage()" id="langBtn">العربية</button>
@@ -613,37 +617,83 @@
             </div>
         </div>
 
+        <!-- Join as Freelancer Section -->
+        <div id="freelance">
+            <div class="section-header">
+                <h2 id="fl-header-title">Join Our Freelance Network</h2>
+                <p id="fl-header-desc">Are you an expert translator, proofreader, or dubbing script editor? Work with us remotely.</p>
+            </div>
+            
+            <div class="freelance-box">
+                <form id="freelanceForm" onsubmit="handleFreelanceSubmit(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="flName" id="lbl-fl-name">Full Name:</label>
+                            <input type="text" id="flName" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="flWhatsapp" id="lbl-fl-wa">WhatsApp Number (With Country Code):</label>
+                            <input type="text" id="flWhatsapp" placeholder="+963944385301" required>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="flRole" id="lbl-fl-role">Primary Specialization:</label>
+                            <select id="flRole">
+                                <option value="translator" id="opt-fl-r1">Audio/Video Translator</option>
+                                <option value="proofreader" id="opt-fl-r2">Proofreader & Editor</option>
+                                <option value="dubbing" id="opt-fl-r3">Dubbing & Lip-Sync Script Prep Specialist</option>
+                                <option value="subtitler" id="opt-fl-r4">Subtitler & Timing Specialist</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="flExp" id="lbl-fl-exp">Years of Experience:</label>
+                            <select id="flExp">
+                                <option value="1-3">1 - 3 Years</option>
+                                <option value="3-5">3 - 5 Years</option>
+                                <option value="5+">5+ Years</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="flPortfolio" id="lbl-fl-port">Portfolio / CV Link (Google Drive, LinkedIn, etc.):</label>
+                        <input type="url" id="flPortfolio" placeholder="https://..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="flBio" id="lbl-fl-bio">Languages & Brief Intro:</label>
+                        <textarea id="flBio" rows="3" placeholder="List your native & target languages and brief experience..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-action" style="background-color: var(--primary);" id="btn-submit-fl">Submit Application</button>
+                </form>
+            </div>
+        </div>
+
         <!-- Contact Us Section -->
         <div id="contact">
             <div class="section-header">
                 <h2 id="cnt-title">Contact Us & Support</h2>
-                <p id="cnt-desc">Have questions or custom Enterprise requirements? Get in touch with our team directly.</p>
+                <p id="cnt-desc">Have questions or custom Enterprise requirements? Get in touch with our team directly via WhatsApp.</p>
             </div>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <span class="contact-icon">💬</span>
-                    <h3 id="cnt-wa-title">WhatsApp Support</h3>
-                    <p style="color: var(--text-muted); margin-top: 8px;" id="cnt-wa-desc">Instant chat for support, urgent inquiries & custom quotes.</p>
-                    <a href="https://wa.me/15550192834" target="_blank" class="contact-link" id="cnt-wa-btn">Chat on WhatsApp</a>
-                </div>
-                <div class="contact-card">
-                    <span class="contact-icon">✉️</span>
-                    <h3 id="cnt-email-title">Email Inquiries</h3>
-                    <p style="color: var(--text-muted); margin-top: 8px;" id="cnt-email-desc">Send us your project files, feedback, or business inquiries.</p>
-                    <a href="mailto:support@simaloc.com" class="contact-link" id="cnt-email-btn">Email support@simaloc.com</a>
-                </div>
+            <div class="contact-box">
+                <span class="contact-icon">💬</span>
+                <h3 id="cnt-wa-title">WhatsApp Support</h3>
+                <p style="color: var(--text-muted); margin-top: 8px;" id="cnt-wa-desc">Instant chat for support, urgent inquiries & custom Enterprise quotes.</p>
+                <a href="https://wa.me/963944385301" target="_blank" class="contact-link" id="cnt-wa-btn">Chat on WhatsApp</a>
             </div>
         </div>
 
     </div>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/15550192834" target="_blank" class="floating-whatsapp" title="WhatsApp Chat">💬</a>
+    <a href="https://wa.me/963944385301" target="_blank" class="floating-whatsapp" title="WhatsApp Chat">💬</a>
 
     <footer>
         <div class="footer-links">
-            <a href="mailto:support@simaloc.com">support@simaloc.com</a> | 
-            <a href="https://wa.me/15550192834" target="_blank">WhatsApp: +1 (555) 019-2834</a>
+            <a href="https://wa.me/963944385301" target="_blank" id="footer-wa-link">WhatsApp: +963 944 385 301</a>
         </div>
         <p id="footer-text">All rights reserved © 2026 Simaloc - Professional Audio & Video Prep Platform</p>
     </footer>
@@ -658,6 +708,7 @@
                 navServices: 'Services',
                 navWorkflow: 'How It Works',
                 navPortal: 'Upload Content',
+                navFreelance: 'Join as Freelancer',
                 navContact: 'Contact Us',
                 heroBadge: 'Professional Subtitling & Timing Platform',
                 heroTitle: 'AI-Powered Audio & Video Subtitling, Script Prep & Dubbing Services',
@@ -709,18 +760,31 @@
                 lblTxid: 'Transaction Hash / TxID:',
                 phTxid: 'Paste your USDT transaction ID here',
                 btnConfirmPay: 'Confirm Payment & Submit Order',
+                flHeaderTitle: 'Join Our Freelance Network',
+                flHeaderDesc: 'Are you an expert translator, proofreader, or dubbing script editor? Work with us remotely.',
+                lblFlName: 'Full Name:',
+                lblFlWa: 'WhatsApp Number (With Country Code):',
+                lblFlRole: 'Primary Specialization:',
+                optFlR1: 'Audio/Video Translator',
+                optFlR2: 'Proofreader & Editor',
+                optFlR3: 'Dubbing & Lip-Sync Script Prep Specialist',
+                optFlR4: 'Subtitler & Timing Specialist',
+                lblFlExp: 'Years of Experience:',
+                lblFlPort: 'Portfolio / CV Link (Google Drive, LinkedIn, etc.):',
+                lblFlBio: 'Languages & Brief Intro:',
+                phFlBio: 'List your native & target languages and brief experience...',
+                btnSubmitFl: 'Submit Application',
                 cntTitle: 'Contact Us & Support',
-                cntDesc: 'Have questions or custom Enterprise requirements? Get in touch with our team directly.',
+                cntDesc: 'Have questions or custom Enterprise requirements? Get in touch with our team directly via WhatsApp.',
                 cntWaTitle: 'WhatsApp Support',
-                cntWaDesc: 'Instant chat for support, urgent inquiries & custom quotes.',
+                cntWaDesc: 'Instant chat for support, urgent inquiries & custom Enterprise quotes.',
                 cntWaBtn: 'Chat on WhatsApp',
-                cntEmailTitle: 'Email Inquiries',
-                cntEmailDesc: 'Send us your project files, feedback, or business inquiries.',
-                cntEmailBtn: 'Email support@simaloc.com',
+                footerWaLink: 'WhatsApp: +963 944 385 301',
                 footerText: 'All rights reserved © 2026 Simaloc - Professional Audio & Video Prep Platform',
                 alertNoFile: 'Please select or upload an audio/video file first.',
                 alertNoTxid: 'Please enter the transaction hash (TxID) to confirm your payment.',
-                alertSuccess: 'Order received successfully! Processing will start immediately upon payment verification.'
+                alertSuccess: 'Order received successfully! Processing will start immediately upon payment verification.',
+                alertFlSuccess: 'Thank you! Your freelance application has been submitted successfully. Our team will contact you soon.'
             },
             ar: {
                 dir: 'rtl',
@@ -728,6 +792,7 @@
                 navServices: 'الخدمات',
                 navWorkflow: 'آلية العمل',
                 navPortal: 'رفع المحتوى المرئي والمسموع',
+                navFreelance: 'الانضمام كـ مستقل',
                 navContact: 'تواصل معنا',
                 heroBadge: 'المنصة الاحترافية لإعداد الترجمة والتزمين',
                 heroTitle: 'إعداد الترجمة والتفريغ والدوبلاج للمحتوى المرئي والمسموع بدقة الذكاء الاصطناعي والإشراف البشري',
@@ -779,18 +844,31 @@
                 lblTxid: 'رقم معرّف المعاملة (TxID / Hash):',
                 phTxid: 'ضع رقم المعاملة الناتج عن محفظتك بعد التحويل',
                 btnConfirmPay: 'تأكيد وإرسال الطلب للمعالجة',
+                flHeaderTitle: 'الانضمام لشبكتنا من المستقلين (Freelancers)',
+                flHeaderDesc: 'هل أنت مترجم أو مدقق أو متخصص في إعداد نصوص الدوبلاج والتزمين؟ انضم إلينا للعمل عن بُعد.',
+                lblFlName: 'الاسم الكامل:',
+                lblFlWa: 'رقم الواتساب (مع رمز الدولة):',
+                lblFlRole: 'التخصص الرئيسي:',
+                optFlR1: 'مترجم صوتيات ومحتوى مرئي',
+                optFlR2: 'مدقق لغوي ومراجع',
+                optFlR3: 'متخصص إعداد نصوص ومزامنة دوبلاج (Lip-sync)',
+                optFlR4: 'متخصص تزمين وتوليد ترجمة مرئية',
+                lblFlExp: 'سنوات الخبرة:',
+                lblFlPort: 'رابط معرض الأعمال / السيرة الذاتية (Google Drive, LinkedIn, إلخ):',
+                lblFlBio: 'اللغات والتعريف الشخصي:',
+                phFlBio: 'اذكر اللغات التي تتقنها ونبذة مختصرة عن خبرتك...',
+                btnSubmitFl: 'تقديم طلب الانضمام',
                 cntTitle: 'تواصل معنا والدعم الفني',
-                cntDesc: 'هل لديك استفسار أو طلبات للمشاريع الضخمة؟ تواصل مع فريقنا مباشرة.',
+                cntDesc: 'هل لديك استفسار أو طلبات للمشاريع الضخمة؟ تواصل مع فريقنا مباشرة عبر الواتساب.',
                 cntWaTitle: 'الدعم عبر الواتساب',
                 cntWaDesc: 'محادثة فورية للاستفسارات السريعة وتلقي المشاريع الخاصة.',
                 cntWaBtn: 'تواصل عبر الواتساب',
-                cntEmailTitle: 'البريد الإلكتروني',
-                cntEmailDesc: 'أرسل لنا ملفات مشاريعك أو استفساراتك التجارية.',
-                cntEmailBtn: 'راسلنا على support@simaloc.com',
+                footerWaLink: 'الواتساب: +963 944 385 301',
                 footerText: 'جميع الحقوق محفوظة © 2026 Simaloc - المنصة الاحترافية لإعداد وتنسيق المحتوى المرئي والمسموع',
                 alertNoFile: 'يرجى اختيار أو رفع ملف المحتوى المرئي والمسموع أولاً قبل المتابعة.',
                 alertNoTxid: 'يرجى كتابة رقم معرّف المعاملة (TxID) للتأكد من عملية التحويل.',
-                alertSuccess: 'تم استلام طلبك وبدء رفعه ومعالجته بنجاح! سيتم إشعارك فور انتهاء المعالجة.'
+                alertSuccess: 'تم استلام طلبك وبدء رفعه ومعالجته بنجاح! سيتم إشعارك فور انتهاء المعالجة.',
+                alertFlSuccess: 'شكراً لك! تم استلام طلب الانضمام بنجاح، وسيتواصل معك فريقنا عند توفر مشاريع تناسب تخصصك.'
             }
         };
 
@@ -805,6 +883,7 @@
             document.getElementById('nav-services').innerText = data.navServices;
             document.getElementById('nav-workflow').innerText = data.navWorkflow;
             document.getElementById('nav-portal').innerText = data.navPortal;
+            document.getElementById('nav-freelance').innerText = data.navFreelance;
             document.getElementById('nav-contact').innerText = data.navContact;
 
             document.getElementById('hero-badge').innerText = data.heroBadge;
@@ -865,15 +944,29 @@
             document.getElementById('txidInput').placeholder = data.phTxid;
             document.getElementById('btn-confirm-pay').innerText = data.btnConfirmPay;
 
+            // Freelance Section Labels
+            document.getElementById('fl-header-title').innerText = data.flHeaderTitle;
+            document.getElementById('fl-header-desc').innerText = data.flHeaderDesc;
+            document.getElementById('lbl-fl-name').innerText = data.lblFlName;
+            document.getElementById('lbl-fl-wa').innerText = data.lblFlWa;
+            document.getElementById('lbl-fl-role').innerText = data.lblFlRole;
+            document.getElementById('opt-fl-r1').innerText = data.optFlR1;
+            document.getElementById('opt-fl-r2').innerText = data.optFlR2;
+            document.getElementById('opt-fl-r3').innerText = data.optFlR3;
+            document.getElementById('opt-fl-r4').innerText = data.optFlR4;
+            document.getElementById('lbl-fl-exp').innerText = data.lblFlExp;
+            document.getElementById('lbl-fl-port').innerText = data.lblFlPort;
+            document.getElementById('lbl-fl-bio').innerText = data.lblFlBio;
+            document.getElementById('flBio').placeholder = data.phFlBio;
+            document.getElementById('btn-submit-fl').innerText = data.btnSubmitFl;
+
             document.getElementById('cnt-title').innerText = data.cntTitle;
             document.getElementById('cnt-desc').innerText = data.cntDesc;
             document.getElementById('cnt-wa-title').innerText = data.cntWaTitle;
             document.getElementById('cnt-wa-desc').innerText = data.cntWaDesc;
             document.getElementById('cnt-wa-btn').innerText = data.cntWaBtn;
-            document.getElementById('cnt-email-title').innerText = data.cntEmailTitle;
-            document.getElementById('cnt-email-desc').innerText = data.cntEmailDesc;
-            document.getElementById('cnt-email-btn').innerText = data.cntEmailBtn;
 
+            document.getElementById('footer-wa-link').innerText = data.footerWaLink;
             document.getElementById('footer-text').innerText = data.footerText;
         }
 
@@ -944,6 +1037,12 @@
                 return;
             }
             alert(i18n[currentLang].alertSuccess);
+        }
+
+        function handleFreelanceSubmit(event) {
+            event.preventDefault();
+            alert(i18n[currentLang].alertFlSuccess);
+            document.getElementById('freelanceForm').reset();
         }
     </script>
 </body>
