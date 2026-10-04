@@ -336,12 +336,102 @@
             border: 1px solid var(--border-color);
         }
 
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .contact-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .contact-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: var(--bg-input);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.2s;
+        }
+
+        .contact-link:hover {
+            background-color: var(--accent);
+            color: var(--bg-dark);
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            text-decoration: none;
+            z-index: 9999;
+            transition: transform 0.2s;
+        }
+
+        html[dir="rtl"] .floating-whatsapp {
+            right: auto;
+            left: 25px;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+        }
+
         footer {
             border-top: 1px solid var(--border-color);
             padding: 30px 0;
             text-align: center;
             color: var(--text-muted);
             font-size: 0.95rem;
+        }
+
+        .footer-links {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
         }
     </style>
 </head>
@@ -355,6 +445,7 @@
                     <a href="#services" id="nav-services">Services</a>
                     <a href="#workflow" id="nav-workflow">How It Works</a>
                     <a href="#portal" id="nav-portal">Upload Content</a>
+                    <a href="#contact" id="nav-contact">Contact Us</a>
                 </nav>
                 <button class="lang-switch-btn" onclick="toggleLanguage()" id="langBtn">العربية</button>
             </div>
@@ -522,9 +613,38 @@
             </div>
         </div>
 
+        <!-- Contact Us Section -->
+        <div id="contact">
+            <div class="section-header">
+                <h2 id="cnt-title">Contact Us & Support</h2>
+                <p id="cnt-desc">Have questions or custom Enterprise requirements? Get in touch with our team directly.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <span class="contact-icon">💬</span>
+                    <h3 id="cnt-wa-title">WhatsApp Support</h3>
+                    <p style="color: var(--text-muted); margin-top: 8px;" id="cnt-wa-desc">Instant chat for support, urgent inquiries & custom quotes.</p>
+                    <a href="https://wa.me/15550192834" target="_blank" class="contact-link" id="cnt-wa-btn">Chat on WhatsApp</a>
+                </div>
+                <div class="contact-card">
+                    <span class="contact-icon">✉️</span>
+                    <h3 id="cnt-email-title">Email Inquiries</h3>
+                    <p style="color: var(--text-muted); margin-top: 8px;" id="cnt-email-desc">Send us your project files, feedback, or business inquiries.</p>
+                    <a href="mailto:support@simaloc.com" class="contact-link" id="cnt-email-btn">Email support@simaloc.com</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/15550192834" target="_blank" class="floating-whatsapp" title="WhatsApp Chat">💬</a>
+
     <footer>
+        <div class="footer-links">
+            <a href="mailto:support@simaloc.com">support@simaloc.com</a> | 
+            <a href="https://wa.me/15550192834" target="_blank">WhatsApp: +1 (555) 019-2834</a>
+        </div>
         <p id="footer-text">All rights reserved © 2026 Simaloc - Professional Audio & Video Prep Platform</p>
     </footer>
 
@@ -538,6 +658,7 @@
                 navServices: 'Services',
                 navWorkflow: 'How It Works',
                 navPortal: 'Upload Content',
+                navContact: 'Contact Us',
                 heroBadge: 'Professional Subtitling & Timing Platform',
                 heroTitle: 'AI-Powered Audio & Video Subtitling, Script Prep & Dubbing Services',
                 heroDesc: 'Direct file uploads, expert human-in-the-loop review, and seamless Pay-As-You-Go pricing based on media duration.',
@@ -588,6 +709,14 @@
                 lblTxid: 'Transaction Hash / TxID:',
                 phTxid: 'Paste your USDT transaction ID here',
                 btnConfirmPay: 'Confirm Payment & Submit Order',
+                cntTitle: 'Contact Us & Support',
+                cntDesc: 'Have questions or custom Enterprise requirements? Get in touch with our team directly.',
+                cntWaTitle: 'WhatsApp Support',
+                cntWaDesc: 'Instant chat for support, urgent inquiries & custom quotes.',
+                cntWaBtn: 'Chat on WhatsApp',
+                cntEmailTitle: 'Email Inquiries',
+                cntEmailDesc: 'Send us your project files, feedback, or business inquiries.',
+                cntEmailBtn: 'Email support@simaloc.com',
                 footerText: 'All rights reserved © 2026 Simaloc - Professional Audio & Video Prep Platform',
                 alertNoFile: 'Please select or upload an audio/video file first.',
                 alertNoTxid: 'Please enter the transaction hash (TxID) to confirm your payment.',
@@ -599,6 +728,7 @@
                 navServices: 'الخدمات',
                 navWorkflow: 'آلية العمل',
                 navPortal: 'رفع المحتوى المرئي والمسموع',
+                navContact: 'تواصل معنا',
                 heroBadge: 'المنصة الاحترافية لإعداد الترجمة والتزمين',
                 heroTitle: 'إعداد الترجمة والتفريغ والدوبلاج للمحتوى المرئي والمسموع بدقة الذكاء الاصطناعي والإشراف البشري',
                 heroDesc: 'رفع مباشر للملفات، تدقيق لغوي احترافي (Human-In-The-Loop)، ونظام دفع مباشر ومرن بحسب مدة المحتوى المرئي والمسموع (Pay-As-You-Go).',
@@ -649,6 +779,14 @@
                 lblTxid: 'رقم معرّف المعاملة (TxID / Hash):',
                 phTxid: 'ضع رقم المعاملة الناتج عن محفظتك بعد التحويل',
                 btnConfirmPay: 'تأكيد وإرسال الطلب للمعالجة',
+                cntTitle: 'تواصل معنا والدعم الفني',
+                cntDesc: 'هل لديك استفسار أو طلبات للمشاريع الضخمة؟ تواصل مع فريقنا مباشرة.',
+                cntWaTitle: 'الدعم عبر الواتساب',
+                cntWaDesc: 'محادثة فورية للاستفسارات السريعة وتلقي المشاريع الخاصة.',
+                cntWaBtn: 'تواصل عبر الواتساب',
+                cntEmailTitle: 'البريد الإلكتروني',
+                cntEmailDesc: 'أرسل لنا ملفات مشاريعك أو استفساراتك التجارية.',
+                cntEmailBtn: 'راسلنا على support@simaloc.com',
                 footerText: 'جميع الحقوق محفوظة © 2026 Simaloc - المنصة الاحترافية لإعداد وتنسيق المحتوى المرئي والمسموع',
                 alertNoFile: 'يرجى اختيار أو رفع ملف المحتوى المرئي والمسموع أولاً قبل المتابعة.',
                 alertNoTxid: 'يرجى كتابة رقم معرّف المعاملة (TxID) للتأكد من عملية التحويل.',
@@ -667,6 +805,7 @@
             document.getElementById('nav-services').innerText = data.navServices;
             document.getElementById('nav-workflow').innerText = data.navWorkflow;
             document.getElementById('nav-portal').innerText = data.navPortal;
+            document.getElementById('nav-contact').innerText = data.navContact;
 
             document.getElementById('hero-badge').innerText = data.heroBadge;
             document.getElementById('hero-title').innerText = data.heroTitle;
@@ -725,6 +864,16 @@
             document.getElementById('lbl-txid').innerText = data.lblTxid;
             document.getElementById('txidInput').placeholder = data.phTxid;
             document.getElementById('btn-confirm-pay').innerText = data.btnConfirmPay;
+
+            document.getElementById('cnt-title').innerText = data.cntTitle;
+            document.getElementById('cnt-desc').innerText = data.cntDesc;
+            document.getElementById('cnt-wa-title').innerText = data.cntWaTitle;
+            document.getElementById('cnt-wa-desc').innerText = data.cntWaDesc;
+            document.getElementById('cnt-wa-btn').innerText = data.cntWaBtn;
+            document.getElementById('cnt-email-title').innerText = data.cntEmailTitle;
+            document.getElementById('cnt-email-desc').innerText = data.cntEmailDesc;
+            document.getElementById('cnt-email-btn').innerText = data.cntEmailBtn;
+
             document.getElementById('footer-text').innerText = data.footerText;
         }
 
