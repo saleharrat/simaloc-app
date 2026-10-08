@@ -137,8 +137,8 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
             margin: 50px 0;
         }
 
@@ -146,7 +146,7 @@
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 30px;
+            padding: 25px;
             transition: transform 0.2s, border-color 0.2s;
         }
 
@@ -161,14 +161,25 @@
         }
 
         .feature-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 10px;
             color: var(--text-light);
         }
 
         .feature-card p {
             color: var(--text-muted);
-            font-size: 0.98rem;
+            font-size: 0.95rem;
+        }
+
+        .price-tag {
+            display: inline-block;
+            margin-top: 12px;
+            font-weight: 700;
+            color: var(--accent);
+            background-color: rgba(16, 185, 129, 0.1);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.9rem;
         }
 
         .portal-wrapper {
@@ -217,7 +228,7 @@
 
         .form-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
             margin-bottom: 20px;
         }
@@ -442,34 +453,43 @@
     </header>
 
     <section class="hero">
-        <span class="badge" id="hero-badge">Ultra-Fast AI Subtitling Platform</span>
-        <h1 id="hero-title">AI Audio & Video Subtitling & Timing Powered by Groq AI</h1>
-        <p id="hero-desc">Upload your media file to generate accurate timed subtitles (.SRT) in seconds.</p>
+        <span class="badge" id="hero-badge">Ultra-Fast AI Subtitling & Localization Platform</span>
+        <h1 id="hero-title">Professional AI Subtitling, Proofreading & Dubbing Prep</h1>
+        <p id="hero-desc">Upload your media file to generate accurate timed subtitles (.SRT) and localization files in seconds powered by Groq AI.</p>
     </section>
 
     <div class="container">
-        <!-- Features Section -->
+        <!-- 4 Essential Services Section -->
         <section id="services" class="features-grid">
             <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3 id="feat1-title">AI Subtitling & Timing</h3>
+                <p id="feat1-desc">Instant speech-to-text transcription and timecode generation powered by Groq AI.</p>
+                <div class="price-tag" id="feat1-price">$0.30 / min</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👤</div>
+                <h3 id="feat2-title">AI Subtitling + Human Review</h3>
+                <p id="feat2-desc">Automated AI transcription followed by manual verification by professional linguists.</p>
+                <div class="price-tag" id="feat2-price">$1.20 / min</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3 id="feat3-title">Proofreading & Editing</h3>
+                <p id="feat3-desc">Detailed linguistic, grammatical, and formatting review for existing subtitles or scripts.</p>
+                <div class="price-tag" id="feat3-price">$0.80 / min</div>
+            </div>
+            <div class="feature-card">
                 <div class="feature-icon">🎙️</div>
-                <h3 id="feat1-title">Automated AI Subtitling</h3>
-                <p id="feat1-desc">Instant speech-to-text transcription for Arabic and English media with high precision.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⏱️</div>
-                <h3 id="feat2-title">Precise Timecodes</h3>
-                <p id="feat2-desc">Millisecond-level subtitle synchronization matching full speech pace automatically.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📄</div>
-                <h3 id="feat3-title">Instant SRT Export</h3>
-                <p id="feat3-desc">Download production-ready .SRT subtitle files ready for YouTube, Premiere, or Final Cut.</p>
+                <h3 id="feat4-title">Dubbing Script Preparation</h3>
+                <p id="feat4-desc">Time-stamped scripts tailored and formatted specifically for voice-over and dubbing actors.</p>
+                <div class="price-tag" id="feat4-price">$1.50 / min</div>
             </div>
         </section>
 
-        <!-- Portal Section -->
+        <!-- Order & Upload Portal Section -->
         <div class="portal-wrapper" id="portal">
-            <h2 style="text-align: center; margin-bottom: 20px;" id="portal-title">File Upload & Instant Processing</h2>
+            <h2 style="text-align: center; margin-bottom: 20px;" id="portal-title">File Upload & Instant Service Portal</h2>
 
             <form id="orderForm" onsubmit="handleOrderSubmit(event)">
                 <div class="upload-zone" id="dropZone">
@@ -485,20 +505,35 @@
 
                 <div class="form-grid">
                     <div class="form-group">
+                        <label for="serviceType" id="lbl-service">Requested Service:</label>
+                        <select id="serviceType" onchange="calculateCost()">
+                            <option value="ai_only" selected id="opt-srv1">1- AI Subtitling & Timing ($0.30/min)</option>
+                            <option value="ai_human" id="opt-srv2">2- AI Subtitling + Human Review ($1.20/min)</option>
+                            <option value="proofreading" id="opt-srv3">3- Proofreading & Editing ($0.80/min)</option>
+                            <option value="dubbing_prep" id="opt-srv4">4- Dubbing Script Preparation ($1.50/min)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label for="durationInput" id="lbl-duration">Media Duration (Minutes):</label>
                         <input type="number" id="durationInput" min="1" value="1" oninput="calculateCost()">
                     </div>
+
                     <div class="form-group">
                         <label for="targetLang" id="lbl-lang">Target Language:</label>
                         <select id="targetLang">
                             <option value="ar">Arabic (العربية)</option>
                             <option value="en" selected>English</option>
+                            <option value="es">Spanish (Español)</option>
+                            <option value="fr">French (Français)</option>
+                            <option value="de">German (Deutsch)</option>
+                            <option value="tr">Turkish (Türkçe)</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="calc-box">
-                    <span id="lbl-cost-title" style="color: var(--text-muted); font-size: 0.95rem;">Estimated Cost ($0.30/min)</span>
+                    <span id="lbl-cost-title" style="color: var(--text-muted); font-size: 0.95rem;">Estimated Total Cost</span>
                     <div class="calc-price" id="calcPrice">$0.30 USDT</div>
                 </div>
 
@@ -518,7 +553,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn-action" id="btn-submit-order">⚡ Verify TXID & Start AI Processing</button>
+                <button type="submit" class="btn-action" id="btn-submit-order">⚡ Verify TXID & Start Processing</button>
             </form>
 
             <div class="ai-processing-box" id="aiBox">
@@ -533,23 +568,23 @@
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <h4 id="step1-t">Upload Media</h4>
-                    <p id="step1-d" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">Select your audio or video file from your device.</p>
+                    <h4 id="step1-t">Select Service & Upload</h4>
+                    <p id="step1-d" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">Choose your desired service and upload your media file.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">2</div>
                     <h4 id="step2-t">Pay via USDT</h4>
-                    <p id="step2-d" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">Send the exact USDT amount and paste the TXID.</p>
+                    <p id="step2-d" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">Transfer the USDT amount to TRC20 wallet and paste TXID.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h4 id="step3-t">AI Transcription</h4>
-                    <p id="step3-d" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">Groq LPU processes speech with Whisper AI in seconds.</p>
+                    <h4 id="step3-t">Processing & Review</h4>
+                    <p id="step3-d" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">Groq LPU processes Whisper AI speech transcription in seconds.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">4</div>
-                    <h4 id="step4-t">Get SRT File</h4>
-                    <p id="step4-d" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">Download your SRT subtitle file instantly.</p>
+                    <h4 id="step4-t">Instant Output File</h4>
+                    <p id="step4-d" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">Download your fully timed SRT / localized file instantly.</p>
                 </div>
             </div>
         </section>
@@ -566,44 +601,59 @@
 
         let currentLang = 'en';
 
+        // Exact rates specified by user
+        const serviceRates = {
+            ai_only: 0.30,
+            ai_human: 1.20,
+            proofreading: 0.80,
+            dubbing_prep: 1.50
+        };
+
         const i18n = {
             en: {
                 langBtn: "العربية",
                 navServices: "Services",
                 navPortal: "Upload Portal",
                 navHow: "How it Works",
-                heroBadge: "Ultra-Fast AI Subtitling Platform",
-                heroTitle: "AI Audio & Video Subtitling & Timing Powered by Groq AI",
-                heroDesc: "Upload your media file to generate accurate timed subtitles (.SRT) in seconds.",
-                feat1Title: "Automated AI Subtitling",
-                feat1Desc: "Instant speech-to-text transcription for Arabic and English media with high precision.",
-                feat2Title: "Precise Timecodes",
-                feat2Desc: "Millisecond-level subtitle synchronization matching full speech pace automatically.",
-                feat3Title: "Instant SRT Export",
-                feat3Desc: "Download production-ready .SRT subtitle files ready for YouTube, Premiere, or Final Cut.",
-                portalTitle: "File Upload & Instant Processing",
+                heroBadge: "Ultra-Fast AI Subtitling & Localization Platform",
+                heroTitle: "Professional AI Subtitling, Proofreading & Dubbing Prep",
+                heroDesc: "Upload your media file to generate accurate timed subtitles (.SRT) and localization files in seconds powered by Groq AI.",
+                feat1Title: "1- AI Subtitling & Timing",
+                feat1Desc: "Instant speech-to-text transcription and timecode generation powered by Groq AI.",
+                feat2Title: "2- AI Subtitling + Human Review",
+                feat2Desc: "Automated AI transcription followed by manual verification by professional linguists.",
+                feat3Title: "3- Proofreading & Editing",
+                feat3Desc: "Detailed linguistic, grammatical, and formatting review for existing subtitles or scripts.",
+                feat4Title: "4- Dubbing Script Preparation",
+                feat4Desc: "Time-stamped scripts tailored and formatted specifically for voice-over and dubbing actors.",
+                portalTitle: "File Upload & Instant Service Portal",
                 uploadHint: "Click to upload or drag & drop your audio/video file here",
                 uploadSub: "Supported formats: MP3, MP4, WAV, M4A (Max: 25 MB)",
                 lblFile: "Selected File:",
                 lblSize: "Size:",
+                lblService: "Requested Service:",
+                optSrv1: "1- AI Subtitling & Timing ($0.30/min)",
+                optSrv2: "2- AI Subtitling + Human Review ($1.20/min)",
+                optSrv3: "3- Proofreading & Editing ($0.80/min)",
+                optSrv4: "4- Dubbing Script Preparation ($1.50/min)",
                 lblDuration: "Media Duration (Minutes):",
                 lblLang: "Target Language:",
-                lblCostTitle: "Estimated Cost ($0.30/min)",
+                lblCostTitle: "Estimated Total Cost",
                 usdtTitle: "💳 Pay via USDT (TRC20)",
                 usdtDesc: "Transfer the exact amount above to our TRC20 wallet address:",
                 lblTxid: "Transaction Hash / TXID:",
                 btnCopy: "Copy",
                 btnCopied: "Copied!",
-                btnSubmit: "⚡ Verify TXID & Start AI Processing",
+                btnSubmit: "⚡ Verify TXID & Start Processing",
                 aiUploading: "🚀 Verifying TXID & uploading file to Groq LPU engine...",
                 aiProcessing: "⚡ Processing complete! Generating SRT subtitle file...",
                 aiSuccess: "✅ Subtitle file generated successfully!",
                 btnDownload: "📥 Download Subtitle (.SRT) File",
                 stepsTitle: "How Simaloc Works",
-                step1T: "Upload Media", step1D: "Select your audio or video file from your device.",
-                step2T: "Pay via USDT", step2D: "Send the exact USDT amount and paste the TXID.",
-                step3T: "AI Transcription", step3D: "Groq LPU processes speech with Whisper AI in seconds.",
-                step4T: "Get SRT File", step4D: "Download your SRT subtitle file instantly.",
+                step1T: "Select Service & Upload", step1D: "Choose your desired service and upload your media file.",
+                step2T: "Pay via USDT", step2D: "Transfer the USDT amount to TRC20 wallet and paste TXID.",
+                step3T: "Processing & Review", step3D: "Groq LPU processes Whisper AI speech transcription in seconds.",
+                step4T: "Instant Output File", step4D: "Download your fully timed SRT / localized file instantly.",
                 footerText: "All rights reserved © 2026 Simaloc - Powered by Groq AI",
                 alertUpload: "Please upload a file first.",
                 alertTxid: "Please enter your USDT Transaction TXID."
@@ -613,23 +663,30 @@
                 navServices: "الخدمات",
                 navPortal: "منصة الرفع",
                 navHow: "كيف تعمل الأداة",
-                heroBadge: "منصة التزمين والتفريغ الآلي السريعة",
-                heroTitle: "تزمين وتفريغ الصوت والفيديو بالذكاء الاصطناعي عبر محرك Groq AI",
-                heroDesc: "ارفع ملف الصوت أو الفيديو للحصول على ملف ترجمة وتزمين دقيق (.SRT) في ثوانٍ.",
-                feat1Title: "تفريغ وتزمين آلي",
-                feat1Desc: "تحويل الكلام إلى نصوص دقيقة جداً مع التوقيت للملفات العربية والإنجليزية.",
-                feat2Title: "توقيتات بالميلي ثانية",
-                feat2Desc: "مزامنة فائقة الدقة لسطور الترجمة لملائمة حركة الكلام التلقائية.",
-                feat3Title: "تصدير فوري لـ SRT",
-                feat3Desc: "تحميل ملفات SRT جاهزة مباشرة للرفع على يوتيوب أو برامج المونتاج.",
-                portalTitle: "رفع الملفات والمعالجة الفورية",
+                heroBadge: "منصة التزمين والترجمة والدبلجة بالذكاء الاصطناعي",
+                heroTitle: "ترجمة، تدقيق، وتزمين وتجهيز نصوص الدبلجة آلياً عبر Groq AI",
+                heroDesc: "ارفع ملف الصوت أو الفيديو للحصول على ترجمة وتزمين وملفات دبلجة دقيقة (.SRT) في ثوانٍ.",
+                feat1Title: "1- ترجمة وتزمين بالذكاء الاصطناعي",
+                feat1Desc: "تفريغ وتزمين آلي سريع جداً للنصوص والترجمات بواسطة محرك Groq الذكي.",
+                feat2Title: "2- ترجمة وتزمين + مراجعة بشرية",
+                feat2Desc: "معالجة أولية بالذكاء الاصطناعي تليها مراجعة وتدقيق كامل من قبل مراجع بشري مختص.",
+                feat3Title: "3- تدقيق لغوي",
+                feat3Desc: "مراجعة وتصحيح الأخطاء اللغوية والنحوية وعلامات الترقيم لملفات الترجمة والنصوص.",
+                feat4Title: "4- إعداد النصوص للأعمال المدبلجة",
+                feat4Desc: "تنسيق وإعداد سيناريوهات ومسودات الدبلجة بشكل متطابق مع الأزمنة وحركات الشفاه.",
+                portalTitle: "رفع الملفات ومعالجة الخدمات الفورية",
                 uploadHint: "انقر لرفع الملف أو اسحبه وأسقطه هنا",
                 uploadSub: "الصيغ المدعومة: MP3, MP4, WAV, M4A (الحد الأقصى: 25 ميجابايت)",
                 lblFile: "الملف المحدد:",
                 lblSize: "الحجم:",
+                lblService: "الخدمة المطلوبة:",
+                optSrv1: "1- ترجمة وتزمين بالذكاء الاصطناعي (0.30$ / دقيقة)",
+                optSrv2: "2- ترجمة وتزمين بالذكاء الاصطناعي + مراجعة بشرية (1.20$ / دقيقة)",
+                optSrv3: "3- تدقيق لغوي (0.80$ / دقيقة)",
+                optSrv4: "4- إعداد النصوص للأعمال المدبلجة (1.50$ / دقيقة)",
                 lblDuration: "مدة الملف (بالدقائق):",
                 lblLang: "اللغة المطلوبة:",
-                lblCostTitle: "التكلفة التقديرية (0.30$ / دقيقة)",
+                lblCostTitle: "التكلفة الإجمالية التقديرية",
                 usdtTitle: "💳 الدفع عبر محفظة USDT (TRC20)",
                 usdtDesc: "قم بتحويل المبلغ الدقيق أعلاه إلى عنوان محفظة TRC20 التالية:",
                 lblTxid: "رقم العملية / TXID:",
@@ -641,10 +698,10 @@
                 aiSuccess: "✅ تم إنشاء ملف الترجمة والتزمين بنجاح!",
                 btnDownload: "📥 تحميل ملف الترجمة والتزمين (.SRT)",
                 stepsTitle: "كيف تعمل منصة Simaloc",
-                step1T: "رفع الملف", step1D: "اختر ملف الصوت أو الفيديو من جهازك.",
+                step1T: "اختر الخدمة وارفع الملف", step1D: "حدد إحدى الخدمات الأربع المطلوبة وارفع الملف.",
                 step2T: "الدفع بـ USDT", step2D: "قم بتحويل قيمة الخدمة وإلصاق رقم العملية (TXID).",
-                step3T: "التفريغ بالذكاء الاصطناعي", step3D: "يقوم محرك Groq بتحليل الصوت وتوليد التزمين.",
-                step4T: "استلام ملف SRT", step4D: "تحميل ملف الترجمة الجاهز مباشرة بنقرة زر.",
+                step3T: "المعالجة والمراجعة", step3D: "يقوم محرك Groq بتحليل الصوت وتوليد التزمين بسرعة فائقة.",
+                step4T: "استلام الملف الجاهز", step4D: "تحميل ملف SRT أو الملف النهائي الجاهز مباشرة.",
                 footerText: "جميع الحقوق محفوظة © 2026 Simaloc - مدعوم بواسطة Groq AI",
                 alertUpload: "يرجى اختيار ملف أولاً قبل بدء المعالجة.",
                 alertTxid: "يرجى إدخال رقم عملية التحويل (TXID)."
@@ -697,11 +754,18 @@
             document.getElementById('feat2-desc').innerText = t.feat2Desc;
             document.getElementById('feat3-title').innerText = t.feat3Title;
             document.getElementById('feat3-desc').innerText = t.feat3Desc;
+            document.getElementById('feat4-title').innerText = t.feat4Title;
+            document.getElementById('feat4-desc').innerText = t.feat4Desc;
             document.getElementById('portal-title').innerText = t.portalTitle;
             document.getElementById('upload-hint').innerText = t.uploadHint;
             document.getElementById('upload-sub').innerText = t.uploadSub;
             document.getElementById('lbl-file').innerText = t.lblFile;
             document.getElementById('lbl-size').innerText = t.lblSize;
+            document.getElementById('lbl-service').innerText = t.lblService;
+            document.getElementById('opt-srv1').innerText = t.optSrv1;
+            document.getElementById('opt-srv2').innerText = t.optSrv2;
+            document.getElementById('opt-srv3').innerText = t.optSrv3;
+            document.getElementById('opt-srv4').innerText = t.optSrv4;
             document.getElementById('lbl-duration').innerText = t.lblDuration;
             document.getElementById('lbl-lang').innerText = t.lblLang;
             document.getElementById('lbl-cost-title').innerText = t.lblCostTitle;
@@ -742,7 +806,9 @@
 
         function calculateCost() {
             const duration = parseFloat(document.getElementById('durationInput').value) || 0;
-            const cost = (duration * 0.30).toFixed(2);
+            const service = document.getElementById('serviceType').value;
+            const rate = serviceRates[service] || 0.30;
+            const cost = (duration * rate).toFixed(2);
             document.getElementById('calcPrice').innerText = `$${cost} USDT`;
         }
 
