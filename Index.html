@@ -65,6 +65,18 @@
             gap: 20px;
         }
 
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
         .lang-switch-btn {
             background-color: var(--bg-input);
             color: var(--text-light);
@@ -121,6 +133,42 @@
             max-width: 1200px;
             margin: 0 auto;
             padding-bottom: 80px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .feature-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
         }
 
         .portal-wrapper {
@@ -216,6 +264,47 @@
             margin: 5px 0;
         }
 
+        .usdt-payment-box {
+            background-color: var(--bg-input);
+            border: 1px dashed var(--accent);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .wallet-address-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--bg-card);
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .wallet-address {
+            font-family: monospace;
+            font-size: 0.95rem;
+            color: var(--accent);
+            word-break: break-all;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .btn-copy {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
         .btn-action {
             width: 100%;
             padding: 16px;
@@ -267,6 +356,43 @@
             box-sizing: border-box;
         }
 
+        .steps-section {
+            margin: 80px 0;
+            text-align: center;
+        }
+
+        .steps-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .step-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 25px;
+            position: relative;
+        }
+
+        .step-number {
+            background-color: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            margin: 0 auto 15px;
+        }
+
         .floating-whatsapp {
             position: fixed;
             bottom: 25px;
@@ -305,6 +431,11 @@
         <div class="nav-container">
             <a href="#" class="logo">Simaloc</a>
             <div class="nav-right">
+                <nav class="nav-links">
+                    <a href="#services" id="nav-services">Services</a>
+                    <a href="#portal" id="nav-portal">Upload Portal</a>
+                    <a href="#how-it-works" id="nav-how">How it Works</a>
+                </nav>
                 <button class="lang-switch-btn" onclick="toggleLanguage()" id="langBtn">العربية</button>
             </div>
         </div>
@@ -317,6 +448,26 @@
     </section>
 
     <div class="container">
+        <!-- Features Section -->
+        <section id="services" class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎙️</div>
+                <h3 id="feat1-title">Automated AI Subtitling</h3>
+                <p id="feat1-desc">Instant speech-to-text transcription for Arabic and English media with high precision.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⏱️</div>
+                <h3 id="feat2-title">Precise Timecodes</h3>
+                <p id="feat2-desc">Millisecond-level subtitle synchronization matching full speech pace automatically.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h3 id="feat3-title">Instant SRT Export</h3>
+                <p id="feat3-desc">Download production-ready .SRT subtitle files ready for YouTube, Premiere, or Final Cut.</p>
+            </div>
+        </section>
+
+        <!-- Portal Section -->
         <div class="portal-wrapper" id="portal">
             <h2 style="text-align: center; margin-bottom: 20px;" id="portal-title">File Upload & Instant Processing</h2>
 
@@ -348,17 +499,60 @@
 
                 <div class="calc-box">
                     <span id="lbl-cost-title" style="color: var(--text-muted); font-size: 0.95rem;">Estimated Cost ($0.30/min)</span>
-                    <div class="calc-price" id="calcPrice">$0.30</div>
+                    <div class="calc-price" id="calcPrice">$0.30 USDT</div>
                 </div>
 
-                <button type="submit" class="btn-action" id="btn-submit-order">⚡ Start Instant AI Processing</button>
+                <!-- USDT Payment Box -->
+                <div class="usdt-payment-box">
+                    <h4 id="usdt-title" style="color: var(--accent); margin-bottom: 5px;">💳 Pay via USDT (TRC20)</h4>
+                    <p id="usdt-desc" style="color: var(--text-muted); font-size: 0.88rem;">Transfer the exact amount above to our TRC20 wallet address:</p>
+                    
+                    <div class="wallet-address-container">
+                        <span class="wallet-address" id="usdtAddress">TYourTRC20WalletAddressGoesHere123456789</span>
+                        <button type="button" class="btn-copy" onclick="copyWalletAddress()" id="btnCopy">Copy</button>
+                    </div>
+
+                    <div class="form-group" style="text-align: left; margin-bottom: 0;">
+                        <label for="txidInput" id="lbl-txid" style="font-size: 0.88rem;">Transaction Hash / TXID:</label>
+                        <input type="text" id="txidInput" placeholder="Paste your USDT transaction TXID here" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-action" id="btn-submit-order">⚡ Verify TXID & Start AI Processing</button>
             </form>
 
             <div class="ai-processing-box" id="aiBox">
-                <div class="ai-status-text" id="aiStatus">🚀 Connecting to Groq LPU engine...</div>
+                <div class="ai-status-text" id="aiStatus">🚀 Verifying TXID & connecting to Groq LPU engine...</div>
                 <a id="btnDownloadSrt" class="btn-download" download="subtitle.srt">📥 Download Subtitle (.SRT) File</a>
             </div>
         </div>
+
+        <!-- How it works -->
+        <section id="how-it-works" class="steps-section">
+            <h2 id="steps-title">How Simaloc Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4 id="step1-t">Upload Media</h4>
+                    <p id="step1-d" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">Select your audio or video file from your device.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4 id="step2-t">Pay via USDT</h4>
+                    <p id="step2-d" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">Send the exact USDT amount and paste the TXID.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4 id="step3-t">AI Transcription</h4>
+                    <p id="step3-d" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">Groq LPU processes speech with Whisper AI in seconds.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h4 id="step4-t">Get SRT File</h4>
+                    <p id="step4-d" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">Download your SRT subtitle file instantly.</p>
+                </div>
+            </div>
+        </section>
     </div>
 
     <a href="https://wa.me/963944385301" target="_blank" class="floating-whatsapp" title="WhatsApp Chat">💬</a>
@@ -375,9 +569,18 @@
         const i18n = {
             en: {
                 langBtn: "العربية",
+                navServices: "Services",
+                navPortal: "Upload Portal",
+                navHow: "How it Works",
                 heroBadge: "Ultra-Fast AI Subtitling Platform",
                 heroTitle: "AI Audio & Video Subtitling & Timing Powered by Groq AI",
                 heroDesc: "Upload your media file to generate accurate timed subtitles (.SRT) in seconds.",
+                feat1Title: "Automated AI Subtitling",
+                feat1Desc: "Instant speech-to-text transcription for Arabic and English media with high precision.",
+                feat2Title: "Precise Timecodes",
+                feat2Desc: "Millisecond-level subtitle synchronization matching full speech pace automatically.",
+                feat3Title: "Instant SRT Export",
+                feat3Desc: "Download production-ready .SRT subtitle files ready for YouTube, Premiere, or Final Cut.",
                 portalTitle: "File Upload & Instant Processing",
                 uploadHint: "Click to upload or drag & drop your audio/video file here",
                 uploadSub: "Supported formats: MP3, MP4, WAV, M4A (Max: 25 MB)",
@@ -386,19 +589,39 @@
                 lblDuration: "Media Duration (Minutes):",
                 lblLang: "Target Language:",
                 lblCostTitle: "Estimated Cost ($0.30/min)",
-                btnSubmit: "⚡ Start Instant AI Processing",
-                aiUploading: "🚀 Uploading file to Groq LPU processing engine...",
+                usdtTitle: "💳 Pay via USDT (TRC20)",
+                usdtDesc: "Transfer the exact amount above to our TRC20 wallet address:",
+                lblTxid: "Transaction Hash / TXID:",
+                btnCopy: "Copy",
+                btnCopied: "Copied!",
+                btnSubmit: "⚡ Verify TXID & Start AI Processing",
+                aiUploading: "🚀 Verifying TXID & uploading file to Groq LPU engine...",
                 aiProcessing: "⚡ Processing complete! Generating SRT subtitle file...",
                 aiSuccess: "✅ Subtitle file generated successfully!",
                 btnDownload: "📥 Download Subtitle (.SRT) File",
+                stepsTitle: "How Simaloc Works",
+                step1T: "Upload Media", step1D: "Select your audio or video file from your device.",
+                step2T: "Pay via USDT", step2D: "Send the exact USDT amount and paste the TXID.",
+                step3T: "AI Transcription", step3D: "Groq LPU processes speech with Whisper AI in seconds.",
+                step4T: "Get SRT File", step4D: "Download your SRT subtitle file instantly.",
                 footerText: "All rights reserved © 2026 Simaloc - Powered by Groq AI",
-                alertUpload: "Please upload a file first."
+                alertUpload: "Please upload a file first.",
+                alertTxid: "Please enter your USDT Transaction TXID."
             },
             ar: {
                 langBtn: "English",
+                navServices: "الخدمات",
+                navPortal: "منصة الرفع",
+                navHow: "كيف تعمل الأداة",
                 heroBadge: "منصة التزمين والتفريغ الآلي السريعة",
                 heroTitle: "تزمين وتفريغ الصوت والفيديو بالذكاء الاصطناعي عبر محرك Groq AI",
                 heroDesc: "ارفع ملف الصوت أو الفيديو للحصول على ملف ترجمة وتزمين دقيق (.SRT) في ثوانٍ.",
+                feat1Title: "تفريغ وتزمين آلي",
+                feat1Desc: "تحويل الكلام إلى نصوص دقيقة جداً مع التوقيت للملفات العربية والإنجليزية.",
+                feat2Title: "توقيتات بالميلي ثانية",
+                feat2Desc: "مزامنة فائقة الدقة لسطور الترجمة لملائمة حركة الكلام التلقائية.",
+                feat3Title: "تصدير فوري لـ SRT",
+                feat3Desc: "تحميل ملفات SRT جاهزة مباشرة للرفع على يوتيوب أو برامج المونتاج.",
                 portalTitle: "رفع الملفات والمعالجة الفورية",
                 uploadHint: "انقر لرفع الملف أو اسحبه وأسقطه هنا",
                 uploadSub: "الصيغ المدعومة: MP3, MP4, WAV, M4A (الحد الأقصى: 25 ميجابايت)",
@@ -407,17 +630,27 @@
                 lblDuration: "مدة الملف (بالدقائق):",
                 lblLang: "اللغة المطلوبة:",
                 lblCostTitle: "التكلفة التقديرية (0.30$ / دقيقة)",
-                btnSubmit: "⚡ بدء المعالجة الفورية بالذكاء الاصطناعي",
-                aiUploading: "🚀 جاري رفع الملف إلى محرك معالجة Groq الفائق...",
+                usdtTitle: "💳 الدفع عبر محفظة USDT (TRC20)",
+                usdtDesc: "قم بتحويل المبلغ الدقيق أعلاه إلى عنوان محفظة TRC20 التالية:",
+                lblTxid: "رقم العملية / TXID:",
+                btnCopy: "نسخ",
+                btnCopied: "تم النسخ!",
+                btnSubmit: "⚡ التحقق من الدفع وبدء المعالجة الفورية",
+                aiUploading: "🚀 جاري التحقق من رقم العملية ورفع الملف لمحرك Groq...",
                 aiProcessing: "⚡ تمت المعالجة بنجاح! جاري إنتاج ملف SRT والتوقيتات...",
                 aiSuccess: "✅ تم إنشاء ملف الترجمة والتزمين بنجاح!",
                 btnDownload: "📥 تحميل ملف الترجمة والتزمين (.SRT)",
+                stepsTitle: "كيف تعمل منصة Simaloc",
+                step1T: "رفع الملف", step1D: "اختر ملف الصوت أو الفيديو من جهازك.",
+                step2T: "الدفع بـ USDT", step2D: "قم بتحويل قيمة الخدمة وإلصاق رقم العملية (TXID).",
+                step3T: "التفريغ بالذكاء الاصطناعي", step3D: "يقوم محرك Groq بتحليل الصوت وتوليد التزمين.",
+                step4T: "استلام ملف SRT", step4D: "تحميل ملف الترجمة الجاهز مباشرة بنقرة زر.",
                 footerText: "جميع الحقوق محفوظة © 2026 Simaloc - مدعوم بواسطة Groq AI",
-                alertUpload: "يرجى اختيار ملف أولاً قبل بدء المعالجة."
+                alertUpload: "يرجى اختيار ملف أولاً قبل بدء المعالجة.",
+                alertTxid: "يرجى إدخال رقم عملية التحويل (TXID)."
             }
         };
 
-        // ربط حدث الضغط على مربع الرفع المخصص
         document.addEventListener("DOMContentLoaded", function() {
             const dropZone = document.getElementById('dropZone');
             const fileInput = document.getElementById('fileInput');
@@ -452,9 +685,18 @@
 
             const t = i18n[currentLang];
             document.getElementById('langBtn').innerText = t.langBtn;
+            document.getElementById('nav-services').innerText = t.navServices;
+            document.getElementById('nav-portal').innerText = t.navPortal;
+            document.getElementById('nav-how').innerText = t.navHow;
             document.getElementById('hero-badge').innerText = t.heroBadge;
             document.getElementById('hero-title').innerText = t.heroTitle;
             document.getElementById('hero-desc').innerText = t.heroDesc;
+            document.getElementById('feat1-title').innerText = t.feat1Title;
+            document.getElementById('feat1-desc').innerText = t.feat1Desc;
+            document.getElementById('feat2-title').innerText = t.feat2Title;
+            document.getElementById('feat2-desc').innerText = t.feat2Desc;
+            document.getElementById('feat3-title').innerText = t.feat3Title;
+            document.getElementById('feat3-desc').innerText = t.feat3Desc;
             document.getElementById('portal-title').innerText = t.portalTitle;
             document.getElementById('upload-hint').innerText = t.uploadHint;
             document.getElementById('upload-sub').innerText = t.uploadSub;
@@ -463,8 +705,21 @@
             document.getElementById('lbl-duration').innerText = t.lblDuration;
             document.getElementById('lbl-lang').innerText = t.lblLang;
             document.getElementById('lbl-cost-title').innerText = t.lblCostTitle;
+            document.getElementById('usdt-title').innerText = t.usdtTitle;
+            document.getElementById('usdt-desc').innerText = t.usdtDesc;
+            document.getElementById('lbl-txid').innerText = t.lblTxid;
+            document.getElementById('btnCopy').innerText = t.btnCopy;
             document.getElementById('btn-submit-order').innerText = t.btnSubmit;
             document.getElementById('btnDownloadSrt').innerText = t.btnDownload;
+            document.getElementById('steps-title').innerText = t.stepsTitle;
+            document.getElementById('step1-t').innerText = t.step1T;
+            document.getElementById('step1-d').innerText = t.step1D;
+            document.getElementById('step2-t').innerText = t.step2T;
+            document.getElementById('step2-d').innerText = t.step2D;
+            document.getElementById('step3-t').innerText = t.step3T;
+            document.getElementById('step3-d').innerText = t.step3D;
+            document.getElementById('step4-t').innerText = t.step4T;
+            document.getElementById('step4-d').innerText = t.step4D;
             document.getElementById('footer-text').innerText = t.footerText;
         }
 
@@ -475,7 +730,6 @@
                 document.getElementById('fileSize').innerText = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
                 document.getElementById('fileDetails').style.display = 'block';
 
-                // محاولة حساب المدة آلياً
                 const audio = new Audio();
                 audio.src = URL.createObjectURL(file);
                 audio.onloadedmetadata = function() {
@@ -489,14 +743,31 @@
         function calculateCost() {
             const duration = parseFloat(document.getElementById('durationInput').value) || 0;
             const cost = (duration * 0.30).toFixed(2);
-            document.getElementById('calcPrice').innerText = `$${cost}`;
+            document.getElementById('calcPrice').innerText = `$${cost} USDT`;
+        }
+
+        function copyWalletAddress() {
+            const address = document.getElementById('usdtAddress').innerText;
+            navigator.clipboard.writeText(address);
+            const btn = document.getElementById('btnCopy');
+            btn.innerText = i18n[currentLang].btnCopied;
+            setTimeout(() => {
+                btn.innerText = i18n[currentLang].btnCopy;
+            }, 2000);
         }
 
         async function handleOrderSubmit(event) {
             event.preventDefault();
             const fileInput = document.getElementById('fileInput');
+            const txidInput = document.getElementById('txidInput');
+
             if (!fileInput.files || fileInput.files.length === 0) {
                 alert(i18n[currentLang].alertUpload);
+                return;
+            }
+
+            if (!txidInput.value.trim()) {
+                alert(i18n[currentLang].alertTxid);
                 return;
             }
 
