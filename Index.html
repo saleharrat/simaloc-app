@@ -65,18 +65,6 @@
             gap: 20px;
         }
 
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
         .lang-switch-btn {
             background-color: var(--bg-input);
             color: var(--text-light);
@@ -135,81 +123,12 @@
             padding-bottom: 80px;
         }
 
-        .section-header {
-            text-align: center;
-            margin: 60px 0 35px;
-        }
-
-        .section-header h2 {
-            font-size: 2.2rem;
-            color: var(--text-light);
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-        }
-
-        .workflow-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
-
-        .step-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 25px;
-            border-radius: 14px;
-        }
-
-        .step-number {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-
-        .service-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: border-color 0.3s;
-        }
-
-        .service-card:hover {
-            border-color: var(--primary);
-        }
-
-        .service-title {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 12px;
-        }
-
-        .service-price {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-top: 20px;
-        }
-
         .portal-wrapper {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 40px;
-            margin-top: 60px;
+            margin-top: 40px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
@@ -281,22 +200,6 @@
             border-color: var(--primary);
         }
 
-        .calc-box {
-            background-color: var(--bg-input);
-            border: 1px solid var(--primary);
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .calc-price {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--accent);
-            margin: 5px 0;
-        }
-
         .btn-action {
             width: 100%;
             padding: 16px;
@@ -314,78 +217,40 @@
             background-color: var(--primary-hover);
         }
 
-        .payment-module {
+        .ai-processing-box {
             display: none;
-            margin-top: 30px;
-            padding: 30px;
             background-color: var(--bg-input);
-            border: 1px solid var(--accent);
+            border: 1px solid var(--primary);
             border-radius: 14px;
-        }
-
-        .wallet-box {
-            background-color: var(--bg-dark);
-            padding: 15px;
-            border-radius: 8px;
-            font-family: monospace;
-            color: var(--accent);
-            word-break: break-all;
+            padding: 25px;
+            margin-top: 25px;
             text-align: center;
-            font-size: 1.15rem;
-            margin: 20px 0;
-            border: 1px solid var(--border-color);
         }
 
-        /* Freelance Section */
-        .freelance-box {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 40px;
-            margin-top: 60px;
-        }
-
-        /* Contact Section */
-        .contact-box {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 40px 20px;
-            text-align: center;
-            max-width: 600px;
-            margin: 30px auto 0;
-            transition: border-color 0.2s;
-        }
-
-        .contact-box:hover {
-            border-color: var(--primary);
-        }
-
-        .contact-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .contact-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 28px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
+        .ai-status-text {
             font-size: 1.1rem;
-            transition: background-color 0.2s, transform 0.2s;
+            color: #818CF8;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
-        .contact-link:hover {
-            background-color: #1EBE5D;
-            transform: translateY(-2px);
+        .btn-download {
+            display: none;
+            width: 100%;
+            padding: 16px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 15px;
+            box-sizing: border-box;
         }
 
-        /* Floating WhatsApp Button */
         .floating-whatsapp {
             position: fixed;
             bottom: 25px;
@@ -402,16 +267,11 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             text-decoration: none;
             z-index: 9999;
-            transition: transform 0.2s;
         }
 
         html[dir="rtl"] .floating-whatsapp {
             right: auto;
             left: 25px;
-        }
-
-        .floating-whatsapp:hover {
-            transform: scale(1.1);
         }
 
         footer {
@@ -421,21 +281,6 @@
             color: var(--text-muted);
             font-size: 0.95rem;
         }
-
-        .footer-links {
-            margin-bottom: 15px;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin: 0 12px;
-            font-weight: 500;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
     </style>
 </head>
 <body>
@@ -444,606 +289,22 @@
         <div class="nav-container">
             <a href="#" class="logo">Simaloc</a>
             <div class="nav-right">
-                <nav class="nav-links">
-                    <a href="#services" id="nav-services">Services</a>
-                    <a href="#workflow" id="nav-workflow">How It Works</a>
-                    <a href="#portal" id="nav-portal">Upload Content</a>
-                    <a href="#freelance" id="nav-freelance">Join as Freelancer</a>
-                    <a href="#contact" id="nav-contact">Contact Us</a>
-                </nav>
                 <button class="lang-switch-btn" onclick="toggleLanguage()" id="langBtn">العربية</button>
             </div>
         </div>
     </header>
 
     <section class="hero">
-        <span class="badge" id="hero-badge">Professional Subtitling & Timing Platform</span>
-        <h1 id="hero-title">AI-Powered Audio & Video Subtitling, Script Prep & Dubbing Services</h1>
-        <p id="hero-desc">Direct file uploads, expert human-in-the-loop review, and seamless Pay-As-You-Go pricing based on media duration.</p>
+        <span class="badge" id="hero-badge">Ultra-Fast AI Subtitling Platform</span>
+        <h1 id="hero-title">AI Audio & Video Subtitling & Timing Powered by Groq AI</h1>
+        <p id="hero-desc">Upload your media file to generate accurate timed subtitles (.SRT) in seconds.</p>
     </section>
 
     <div class="container">
-
-        <div id="workflow">
-            <div class="section-header">
-                <h2 id="wf-title">Workflow & USDT Payment</h2>
-                <p id="wf-desc">Simple steps to process your audio & video translation with USDT payment</p>
-            </div>
-            <div class="workflow-grid">
-                <div class="step-card">
-                    <div class="step-number">01</div>
-                    <h3 id="wf-step1-title">Upload & Specify Duration</h3>
-                    <p id="wf-step1-desc">Upload your media file (MP4, MP3...) and specify total duration in minutes.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">02</div>
-                    <h3>Calculate & Pay via USDT</h3>
-                    <p id="wf-step2-desc">System calculates price. Copy the TRC20 wallet address, transfer funds, and submit TxID.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">03</div>
-                    <h3 id="wf-step3-title">AI Processing / Review</h3>
-                    <p id="wf-step3-desc">AI instantly transcribes, translates, and timestamps your content with optional human review.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">04</div>
-                    <h3 id="wf-step4-title">Download Prepared Files</h3>
-                    <p id="wf-step4-desc">Once completed, download subtitle files (SRT, VTT) or ready-to-use translated media.</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="services">
-            <div class="section-header">
-                <h2 id="srv-header-title">Our Services</h2>
-                <p id="srv-header-desc">Choose the right service tier for your audio & video content</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div>
-                        <h3 class="service-title" id="srv1-title">1. Automated AI Subtitling & Timing</h3>
-                        <p style="color: var(--text-muted);" id="srv1-desc">100% automated AI processing for fast audio/video transcription, timing, and translation with zero human intervention.</p>
-                    </div>
-                    <div class="service-price" id="srv1-price">$0.30 / min</div>
-                </div>
-                <div class="service-card">
-                    <div>
-                        <h3 class="service-title" id="srv2-title">2. AI Subtitling + Human Review</h3>
-                        <p style="color: var(--text-muted);" id="srv2-desc">Initial AI automated translation combined with expert human proofreading to ensure total accuracy and context alignment.</p>
-                    </div>
-                    <div class="service-price" id="srv2-price">$0.75 / min</div>
-                </div>
-                <div class="service-card">
-                    <div>
-                        <h3 class="service-title" id="srv3-title">3. Proofreading & Editing</h3>
-                        <p style="color: var(--text-muted);" id="srv3-desc">Thorough review of translated texts to guarantee 100% error-free grammar, spelling, and natural linguistic flow.</p>
-                    </div>
-                    <div class="service-price" id="srv3-price">$0.50 / min</div>
-                </div>
-                <div class="service-card">
-                    <div>
-                        <h3 class="service-title" id="srv4-title">4. Script Preparation for Dubbing</h3>
-                        <p style="color: var(--text-muted);" id="srv4-desc">Adapting and timing scripts specifically for lip-sync and voiceover recording to streamline dubbing workflows.</p>
-                    </div>
-                    <div class="service-price" id="srv4-price">$1.50 / min</div>
-                </div>
-            </div>
-        </div>
-
         <div class="portal-wrapper" id="portal">
-            <h2 style="text-align: center; margin-bottom: 10px;" id="portal-title">File Upload & Order Form</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;" id="portal-desc">Upload your audio/video content and set preferences for an instant quote</p>
+            <h2 style="text-align: center; margin-bottom: 10px;" id="portal-title">File Upload & Instant Processing</h2>
 
             <form id="orderForm" onsubmit="handleOrderSubmit(event)">
-                
                 <div class="upload-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
                     <div class="upload-icon">📁</div>
-                    <h3 id="upload-hint">Click to upload or drag & drop your audio/video file here</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;" id="upload-formats">Supported formats: MP4, MP3, MOV, WAV, AVI (Max: 500 MB)</p>
-                    <input type="file" id="fileInput" class="file-input" accept="video/*,audio/*" onchange="handleFileSelect(event)">
-                </div>
-
-                <div class="file-details" id="fileDetails">
-                    <span id="lbl-file">Selected File:</span> <strong id="fileName">-</strong> | <span id="lbl-size">Size:</span> <strong id="fileSize">-</strong>
-                </div>
-
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="serviceSelect" id="lbl-service">Required Service:</label>
-                        <select id="serviceSelect" onchange="calculateTotal()">
-                            <option value="0.30" id="opt-s1">1. Automated AI Subtitling & Timing ($0.30/min)</option>
-                            <option value="0.75" id="opt-s2" selected>2. AI Subtitling + Human Review ($0.75/min)</option>
-                            <option value="0.50" id="opt-s3">3. Proofreading & Editing ($0.50/min)</option>
-                            <option value="1.50" id="opt-s4">4. Script Preparation for Dubbing ($1.50/min)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="durationInput" id="lbl-duration">Media Duration (Minutes):</label>
-                        <input type="number" id="durationInput" min="1" value="10" oninput="calculateTotal()" required>
-                    </div>
-                </div>
-
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="sourceLang" id="lbl-srclang">Original Media Language:</label>
-                        <select id="sourceLang">
-                            <option value="en" selected id="opt-src-en">English</option>
-                            <option value="ar" id="opt-src-ar">Arabic</option>
-                            <option value="fr" id="opt-src-fr">French</option>
-                            <option value="es" id="opt-src-es">Spanish</option>
-                            <option value="other" id="opt-src-other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="targetLang" id="lbl-tgtlang">Target Language:</label>
-                        <select id="targetLang">
-                            <option value="ar" selected id="opt-tgt-ar">Arabic</option>
-                            <option value="en" id="opt-tgt-en">English</option>
-                            <option value="fr" id="opt-tgt-fr">French</option>
-                            <option value="es" id="opt-tgt-es">Spanish</option>
-                            <option value="de" id="opt-tgt-de">German</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="instructions" id="lbl-notes">Instructions & Glossaries (Terminology, Context):</label>
-                    <textarea id="instructions" rows="3" placeholder="Add any special instructions or glossaries..."></textarea>
-                </div>
-
-                <div class="calc-box">
-                    <div id="lbl-total-price">Estimated Total Cost</div>
-                    <div class="calc-price" id="totalPrice">$7.50</div>
-                    <small style="color: var(--text-muted);" id="lbl-payment-note">Payment accepted via USDT (TRC20 network)</small>
-                </div>
-
-                <button type="submit" class="btn-action" id="btn-submit-order">Proceed to Payment & Order Confirmation</button>
-            </form>
-
-            <div class="payment-module" id="paymentModule">
-                <h3 style="color: var(--accent); text-align: center;" id="pay-title">Payment & Order Finalization</h3>
-                <p style="text-align: center; margin-top: 10px;" id="pay-desc">Please transfer the total calculated amount to Simaloc official USDT address:</p>
-                
-                <div class="wallet-box" id="walletAddr">TYmG8VqPBm9Ex1wXGSaTEwCmAbXQjadDv7</div>
-
-                <div class="form-group" style="margin-top: 20px;">
-                    <label for="txidInput" id="lbl-txid">Transaction Hash / TxID:</label>
-                    <input type="text" id="txidInput" placeholder="Paste your USDT transaction ID here">
-                </div>
-
-                <button type="button" class="btn-action" style="background-color: var(--accent);" id="btn-confirm-pay" onclick="confirmPayment()">Confirm Payment & Submit Order</button>
-            </div>
-        </div>
-
-        <!-- Join as Freelancer Section -->
-        <div id="freelance">
-            <div class="section-header">
-                <h2 id="fl-header-title">Join Our Freelance Network</h2>
-                <p id="fl-header-desc">Are you an expert translator, proofreader, or dubbing script editor? Work with us remotely.</p>
-            </div>
-            
-            <div class="freelance-box">
-                <form id="freelanceForm" onsubmit="handleFreelanceSubmit(event)">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="flName" id="lbl-fl-name">Full Name:</label>
-                            <input type="text" id="flName" placeholder="John Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="flWhatsapp" id="lbl-fl-wa">WhatsApp Number (With Country Code):</label>
-                            <input type="text" id="flWhatsapp" placeholder="+963944385301" required>
-                        </div>
-                    </div>
-
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="flRole" id="lbl-fl-role">Primary Specialization:</label>
-                            <select id="flRole">
-                                <option value="translator" id="opt-fl-r1">Audio/Video Translator</option>
-                                <option value="proofreader" id="opt-fl-r2">Proofreader & Editor</option>
-                                <option value="dubbing" id="opt-fl-r3">Dubbing & Lip-Sync Script Prep Specialist</option>
-                                <option value="subtitler" id="opt-fl-r4">Subtitler & Timing Specialist</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="flExp" id="lbl-fl-exp">Years of Experience:</label>
-                            <select id="flExp">
-                                <option value="1-3">1 - 3 Years</option>
-                                <option value="3-5">3 - 5 Years</option>
-                                <option value="5+">5+ Years</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="flPortfolio" id="lbl-fl-port">Portfolio / CV Link (Google Drive, LinkedIn, etc.):</label>
-                        <input type="url" id="flPortfolio" placeholder="https://..." required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="flBio" id="lbl-fl-bio">Languages & Brief Intro:</label>
-                        <textarea id="flBio" rows="3" placeholder="List your native & target languages and brief experience..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-action" style="background-color: var(--primary);" id="btn-submit-fl">Submit Application</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Contact Us Section -->
-        <div id="contact">
-            <div class="section-header">
-                <h2 id="cnt-title">Contact Us & Support</h2>
-                <p id="cnt-desc">Have questions or custom Enterprise requirements? Get in touch with our team directly via WhatsApp.</p>
-            </div>
-            <div class="contact-box">
-                <span class="contact-icon">💬</span>
-                <h3 id="cnt-wa-title">WhatsApp Support</h3>
-                <p style="color: var(--text-muted); margin-top: 8px;" id="cnt-wa-desc">Instant chat for support, urgent inquiries & custom Enterprise quotes.</p>
-                <a href="https://wa.me/963944385301" target="_blank" class="contact-link" id="cnt-wa-btn">Chat on WhatsApp</a>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/963944385301" target="_blank" class="floating-whatsapp" title="WhatsApp Chat">💬</a>
-
-    <footer>
-        <div class="footer-links">
-            <a href="https://wa.me/963944385301" target="_blank" id="footer-wa-link">WhatsApp: +963 944 385 301</a>
-        </div>
-        <p id="footer-text">All rights reserved © 2026 Simaloc - Professional Audio & Video Prep Platform</p>
-    </footer>
-
-    <script>
-        let currentLang = 'en';
-
-        const i18n = {
-            en: {
-                dir: 'ltr',
-                langBtn: 'العربية',
-                navServices: 'Services',
-                navWorkflow: 'How It Works',
-                navPortal: 'Upload Content',
-                navFreelance: 'Join as Freelancer',
-                navContact: 'Contact Us',
-                heroBadge: 'Professional Subtitling & Timing Platform',
-                heroTitle: 'AI-Powered Audio & Video Subtitling, Script Prep & Dubbing Services',
-                heroDesc: 'Direct file uploads, expert human-in-the-loop review, and seamless Pay-As-You-Go pricing based on media duration.',
-                wfTitle: 'Workflow & USDT Payment',
-                wfDesc: 'Simple steps to process your audio & video translation with USDT payment',
-                wfStep1Title: 'Upload & Specify Duration',
-                wfStep1Desc: 'Upload your media file (MP4, MP3...) and specify total duration in minutes.',
-                wfStep2Desc: 'System calculates price. Copy the TRC20 wallet address, transfer funds, and submit TxID.',
-                wfStep3Title: 'AI Processing / Review',
-                wfStep3Desc: 'AI instantly transcribes, translates, and timestamps your content with optional human review.',
-                wfStep4Title: 'Download Prepared Files',
-                wfStep4Desc: 'Once completed, download subtitle files (SRT, VTT) or ready-to-use translated media.',
-                srvHeaderTitle: 'Our Services',
-                srvHeaderDesc: 'Choose the right service tier for your audio & video content',
-                srv1Title: '1. Automated AI Subtitling & Timing',
-                srv1Desc: '100% automated AI processing for fast audio/video transcription, timing, and translation with zero human intervention.',
-                srv1Price: '$0.30 / min',
-                srv2Title: '2. AI Subtitling + Human Review',
-                srv2Desc: 'Initial AI automated translation combined with expert human proofreading to ensure total accuracy and context alignment.',
-                srv2Price: '$0.75 / min',
-                srv3Title: '3. Proofreading & Editing',
-                srv3Desc: 'Thorough review of translated texts to guarantee 100% error-free grammar, spelling, and natural linguistic flow.',
-                srv3Price: '$0.50 / min',
-                srv4Title: '4. Script Preparation for Dubbing',
-                srv4Desc: 'Adapting and timing scripts specifically for lip-sync and voiceover recording to streamline dubbing workflows.',
-                srv4Price: '$1.50 / min',
-                portalTitle: 'File Upload & Order Form',
-                portalDesc: 'Upload your audio/video content and set preferences for an instant quote',
-                uploadHint: 'Click to upload or drag & drop your audio/video file here',
-                uploadFormats: 'Supported formats: MP4, MP3, MOV, WAV, AVI (Max: 500 MB)',
-                lblFile: 'Selected File:',
-                lblSize: 'Size:',
-                lblService: 'Required Service:',
-                optS1: '1. Automated AI Subtitling & Timing ($0.30/min)',
-                optS2: '2. AI Subtitling + Human Review ($0.75/min)',
-                optS3: '3. Proofreading & Editing ($0.50/min)',
-                optS4: '4. Script Preparation for Dubbing ($1.50/min)',
-                lblDuration: 'Media Duration (Minutes):',
-                lblSrcLang: 'Original Media Language:',
-                lblTgtLang: 'Target Language:',
-                lblNotes: 'Instructions & Glossaries (Terminology, Context):',
-                phNotes: 'Add any special instructions or glossaries...',
-                lblTotalPrice: 'Estimated Total Cost',
-                lblPaymentNote: 'Payment accepted via USDT (TRC20 network)',
-                btnSubmitOrder: 'Proceed to Payment & Order Confirmation',
-                payTitle: 'Payment & Order Finalization',
-                payDesc: 'Please transfer the total calculated amount to Simaloc official USDT address:',
-                lblTxid: 'Transaction Hash / TxID:',
-                phTxid: 'Paste your USDT transaction ID here',
-                btnConfirmPay: 'Confirm Payment & Submit Order',
-                flHeaderTitle: 'Join Our Freelance Network',
-                flHeaderDesc: 'Are you an expert translator, proofreader, or dubbing script editor? Work with us remotely.',
-                lblFlName: 'Full Name:',
-                lblFlWa: 'WhatsApp Number (With Country Code):',
-                lblFlRole: 'Primary Specialization:',
-                optFlR1: 'Audio/Video Translator',
-                optFlR2: 'Proofreader & Editor',
-                optFlR3: 'Dubbing & Lip-Sync Script Prep Specialist',
-                optFlR4: 'Subtitler & Timing Specialist',
-                lblFlExp: 'Years of Experience:',
-                lblFlPort: 'Portfolio / CV Link (Google Drive, LinkedIn, etc.):',
-                lblFlBio: 'Languages & Brief Intro:',
-                phFlBio: 'List your native & target languages and brief experience...',
-                btnSubmitFl: 'Submit Application',
-                cntTitle: 'Contact Us & Support',
-                cntDesc: 'Have questions or custom Enterprise requirements? Get in touch with our team directly via WhatsApp.',
-                cntWaTitle: 'WhatsApp Support',
-                cntWaDesc: 'Instant chat for support, urgent inquiries & custom Enterprise quotes.',
-                cntWaBtn: 'Chat on WhatsApp',
-                footerWaLink: 'WhatsApp: +963 944 385 301',
-                footerText: 'All rights reserved © 2026 Simaloc - Professional Audio & Video Prep Platform',
-                alertNoFile: 'Please select or upload an audio/video file first.',
-                alertNoTxid: 'Please enter the transaction hash (TxID) to confirm your payment.',
-                alertSuccess: 'Order received successfully! Processing will start immediately upon payment verification.',
-                alertFlSuccess: 'Thank you! Your freelance application has been submitted successfully. Our team will contact you soon.'
-            },
-            ar: {
-                dir: 'rtl',
-                langBtn: 'English',
-                navServices: 'الخدمات',
-                navWorkflow: 'آلية العمل',
-                navPortal: 'رفع المحتوى المرئي والمسموع',
-                navFreelance: 'الانضمام كـ مستقل',
-                navContact: 'تواصل معنا',
-                heroBadge: 'المنصة الاحترافية لإعداد الترجمة والتزمين',
-                heroTitle: 'إعداد الترجمة والتفريغ والدوبلاج للمحتوى المرئي والمسموع بدقة الذكاء الاصطناعي والإشراف البشري',
-                heroDesc: 'رفع مباشر للملفات، تدقيق لغوي احترافي (Human-In-The-Loop)، ونظام دفع مباشر ومرن بحسب مدة المحتوى المرئي والمسموع (Pay-As-You-Go).',
-                wfTitle: 'آلية العمل وسداد التكلفة',
-                wfDesc: 'خطوات بسيطة وسريعة للحصول على ترجمتك الآلية والدفع عبر USDT',
-                wfStep1Title: 'رفع الملف وتحديد المدة',
-                wfStep1Desc: 'قم بزيارة بوابة الرفع، وارفاق ملف الصوت أو الفيديو (MP4, MP3...) مع تحديد مدة المحتوى بالدقائق.',
-                wfStep2Desc: 'يحسب النظام التكلفة آلياً. انسخ عنوان محفظة (TRC20)، وحوّل المبلغ من أي محفظة رقمية ثم أدخل رقم المعاملة (TxID).',
-                wfStep3Title: 'الترجمة والتزمين الآلي',
-                wfStep3Desc: 'يبدأ الذكاء الاصطناعي فوراً بتفريغ الصوت وتوليد الترجمة والتزمين المرئي بدقة فائقة وبشكل آلي بالكامل.',
-                wfStep4Title: 'استلام وتنزيل الملفات',
-                wfStep4Desc: 'بمجرد اكتمال المعالجة الآلية، ستتمكن من تنزيل ملف الترجمة (SRT / VTT) أو الفيديو المترجم جاهزاً للاستخدام.',
-                srvHeaderTitle: 'خدمات المنصة',
-                srvHeaderDesc: 'اختر المستوى المناسب لإعداد وتنسيق مشروعك',
-                srv1Title: '1. ترجمة وتزمين مرئي بالذكاء الاصطناعي',
-                srv1Desc: 'معالجة آلية كاملة وسريعة للمحتوى المرئي والمسموع، وتوليد ملفات الترجمة والتزمين فوراً دون أي تدخل بشري.',
-                srv1Price: '$0.30 / دقيقة',
-                srv2Title: '2. ترجمة وتزمين بالذكاء الاصطناعي + مراجعة بشرية',
-                srv2Desc: 'ترجمة آلية أولية يتم إخضاعها لمراجعة بشرية دقيقة من قبل متخصصين لضمان صحة الترجمة ومطابقة المعنى تماماً.',
-                srv2Price: '$0.75 / دقيقة',
-                srv3Title: '3. التدقيق اللغوي',
-                srv3Desc: 'فحص المادة المترجمة والتأكد من خلو النص بالكامل من الأخطاء الكتابية والقواعدية وتصحيح العبارات والصياغة.',
-                srv3Price: '$0.50 / دقيقة',
-                srv4Title: '4. إعداد النصوص من أجل الدوبلاج',
-                srv4Desc: 'إعداد وتكييف النصوص والمزامنة الصوتية بدقة لتناسب حركة الشفاه (Lip-sync) وتسهيل عمل المعلقين والممثلين الصوتين.',
-                srv4Price: '$1.50 / دقيقة',
-                portalTitle: 'بوابة رفع الملفات وإنشاء الطلب',
-                portalDesc: 'قم برفع ملف المحتوى المرئي والمسموع وتحديد التفضيلات لحساب التكلفة فوراً',
-                uploadHint: 'اضغط هنا لرفع ملف المحتوى المرئي والمسموع، أو اسحبه إلى هنا',
-                uploadFormats: 'الصيغ المدعومة: MP4, MP3, MOV, WAV, AVI (الحد الأقصى: 500 ميغابايت)',
-                lblFile: 'الملف المحدد:',
-                lblSize: 'الحجم:',
-                lblService: 'نوع الخدمة المطلوبة:',
-                optS1: '1. ترجمة وتزمين مرئي بالذكاء الاصطناعي (آلي بالكامل - $0.30/دقيقة)',
-                optS2: '2. ترجمة وتزمين بالذكاء الاصطناعي + مراجعة بشرية ($0.75/دقيقة)',
-                optS3: '3. التدقيق اللغوي (تأكيد خلو الأخطاء الكتابية والقواعدية - $0.50/دقيقة)',
-                optS4: '4. إعداد النصوص من أجل الدوبلاج ($1.50/دقيقة)',
-                lblDuration: 'مدة المحتوى المرئي والمسموع (بالدقائق):',
-                lblSrcLang: 'اللغة الأصلية للملف:',
-                lblTgtLang: 'اللغة المطلوب الترجمة والإعداد إليها:',
-                lblNotes: 'ملاحظات توجيهية (مصطلحات خاصة، أسماء شخصيات، سياق المحتوى):',
-                phNotes: 'أضف أي تفاصيل تود من النظام والنموذج الآلي مراعاتها أثناء إعداد النص...',
-                lblTotalPrice: 'التكلفة الإجمالية التقديرية للخدمة',
-                lblPaymentNote: 'الدفع يتم عبر عملة USDT الرقمية (شبكة TRC20)',
-                btnSubmitOrder: 'متابعة لتأكيد الطلب والدفع عبر USDT',
-                payTitle: 'تفاصيل الدفع واستكمال الطلب',
-                payDesc: 'يرجى تحويل المبلغ التقديري الموضح أعلاه إلى عنوان المحفظة الرسمي الخاص بـ Simaloc:',
-                lblTxid: 'رقم معرّف المعاملة (TxID / Hash):',
-                phTxid: 'ضع رقم المعاملة الناتج عن محفظتك بعد التحويل',
-                btnConfirmPay: 'تأكيد وإرسال الطلب للمعالجة',
-                flHeaderTitle: 'الانضمام لشبكتنا من المستقلين (Freelancers)',
-                flHeaderDesc: 'هل أنت مترجم أو مدقق أو متخصص في إعداد نصوص الدوبلاج والتزمين؟ انضم إلينا للعمل عن بُعد.',
-                lblFlName: 'الاسم الكامل:',
-                lblFlWa: 'رقم الواتساب (مع رمز الدولة):',
-                lblFlRole: 'التخصص الرئيسي:',
-                optFlR1: 'مترجم صوتيات ومحتوى مرئي',
-                optFlR2: 'مدقق لغوي ومراجع',
-                optFlR3: 'متخصص إعداد نصوص ومزامنة دوبلاج (Lip-sync)',
-                optFlR4: 'متخصص تزمين وتوليد ترجمة مرئية',
-                lblFlExp: 'سنوات الخبرة:',
-                lblFlPort: 'رابط معرض الأعمال / السيرة الذاتية (Google Drive, LinkedIn, إلخ):',
-                lblFlBio: 'اللغات والتعريف الشخصي:',
-                phFlBio: 'اذكر اللغات التي تتقنها ونبذة مختصرة عن خبرتك...',
-                btnSubmitFl: 'تقديم طلب الانضمام',
-                cntTitle: 'تواصل معنا والدعم الفني',
-                cntDesc: 'هل لديك استفسار أو طلبات للمشاريع الضخمة؟ تواصل مع فريقنا مباشرة عبر الواتساب.',
-                cntWaTitle: 'الدعم عبر الواتساب',
-                cntWaDesc: 'محادثة فورية للاستفسارات السريعة وتلقي المشاريع الخاصة.',
-                cntWaBtn: 'تواصل عبر الواتساب',
-                footerWaLink: 'الواتساب: +963 944 385 301',
-                footerText: 'جميع الحقوق محفوظة © 2026 Simaloc - المنصة الاحترافية لإعداد وتنسيق المحتوى المرئي والمسموع',
-                alertNoFile: 'يرجى اختيار أو رفع ملف المحتوى المرئي والمسموع أولاً قبل المتابعة.',
-                alertNoTxid: 'يرجى كتابة رقم معرّف المعاملة (TxID) للتأكد من عملية التحويل.',
-                alertSuccess: 'تم استلام طلبك وبدء رفعه ومعالجته بنجاح! سيتم إشعارك فور انتهاء المعالجة.',
-                alertFlSuccess: 'شكراً لك! تم استلام طلب الانضمام بنجاح، وسيتواصل معك فريقنا عند توفر مشاريع تناسب تخصصك.'
-            }
-        };
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'ar' : 'en';
-            const data = i18n[currentLang];
-
-            document.documentElement.lang = currentLang;
-            document.documentElement.dir = data.dir;
-
-            document.getElementById('langBtn').innerText = data.langBtn;
-            document.getElementById('nav-services').innerText = data.navServices;
-            document.getElementById('nav-workflow').innerText = data.navWorkflow;
-            document.getElementById('nav-portal').innerText = data.navPortal;
-            document.getElementById('nav-freelance').innerText = data.navFreelance;
-            document.getElementById('nav-contact').innerText = data.navContact;
-
-            document.getElementById('hero-badge').innerText = data.heroBadge;
-            document.getElementById('hero-title').innerText = data.heroTitle;
-            document.getElementById('hero-desc').innerText = data.heroDesc;
-
-            document.getElementById('wf-title').innerText = data.wfTitle;
-            document.getElementById('wf-desc').innerText = data.wfDesc;
-            document.getElementById('wf-step1-title').innerText = data.wfStep1Title;
-            document.getElementById('wf-step1-desc').innerText = data.wfStep1Desc;
-            document.getElementById('wf-step2-desc').innerText = data.wfStep2Desc;
-            document.getElementById('wf-step3-title').innerText = data.wfStep3Title;
-            document.getElementById('wf-step3-desc').innerText = data.wfStep3Desc;
-            document.getElementById('wf-step4-title').innerText = data.wfStep4Title;
-            document.getElementById('wf-step4-desc').innerText = data.wfStep4Desc;
-
-            document.getElementById('srv-header-title').innerText = data.srvHeaderTitle;
-            document.getElementById('srv-header-desc').innerText = data.srvHeaderDesc;
-            document.getElementById('srv1-title').innerText = data.srv1Title;
-            document.getElementById('srv1-desc').innerText = data.srv1Desc;
-            document.getElementById('srv1-price').innerText = data.srv1Price;
-            document.getElementById('srv2-title').innerText = data.srv2Title;
-            document.getElementById('srv2-desc').innerText = data.srv2Desc;
-            document.getElementById('srv2-price').innerText = data.srv2Price;
-            document.getElementById('srv3-title').innerText = data.srv3Title;
-            document.getElementById('srv3-desc').innerText = data.srv3Desc;
-            document.getElementById('srv3-price').innerText = data.srv3Price;
-            document.getElementById('srv4-title').innerText = data.srv4Title;
-            document.getElementById('srv4-desc').innerText = data.srv4Desc;
-            document.getElementById('srv4-price').innerText = data.srv4Price;
-
-            document.getElementById('portal-title').innerText = data.portalTitle;
-            document.getElementById('portal-desc').innerText = data.portalDesc;
-            document.getElementById('upload-hint').innerText = data.uploadHint;
-            document.getElementById('upload-formats').innerText = data.uploadFormats;
-            document.getElementById('lbl-file').innerText = data.lblFile;
-            document.getElementById('lbl-size').innerText = data.lblSize;
-            document.getElementById('lbl-service').innerText = data.lblService;
-
-            document.getElementById('opt-s1').innerText = data.optS1;
-            document.getElementById('opt-s2').innerText = data.optS2;
-            document.getElementById('opt-s3').innerText = data.optS3;
-            document.getElementById('opt-s4').innerText = data.optS4;
-
-            document.getElementById('lbl-duration').innerText = data.lblDuration;
-            document.getElementById('lbl-srclang').innerText = data.lblSrcLang;
-            document.getElementById('lbl-tgtlang').innerText = data.lblTgtLang;
-            document.getElementById('lbl-notes').innerText = data.lblNotes;
-            document.getElementById('instructions').placeholder = data.phNotes;
-
-            document.getElementById('lbl-total-price').innerText = data.lblTotalPrice;
-            document.getElementById('lbl-payment-note').innerText = data.lblPaymentNote;
-            document.getElementById('btn-submit-order').innerText = data.btnSubmitOrder;
-
-            document.getElementById('pay-title').innerText = data.payTitle;
-            document.getElementById('pay-desc').innerText = data.payDesc;
-            document.getElementById('lbl-txid').innerText = data.lblTxid;
-            document.getElementById('txidInput').placeholder = data.phTxid;
-            document.getElementById('btn-confirm-pay').innerText = data.btnConfirmPay;
-
-            // Freelance Section Labels
-            document.getElementById('fl-header-title').innerText = data.flHeaderTitle;
-            document.getElementById('fl-header-desc').innerText = data.flHeaderDesc;
-            document.getElementById('lbl-fl-name').innerText = data.lblFlName;
-            document.getElementById('lbl-fl-wa').innerText = data.lblFlWa;
-            document.getElementById('lbl-fl-role').innerText = data.lblFlRole;
-            document.getElementById('opt-fl-r1').innerText = data.optFlR1;
-            document.getElementById('opt-fl-r2').innerText = data.optFlR2;
-            document.getElementById('opt-fl-r3').innerText = data.optFlR3;
-            document.getElementById('opt-fl-r4').innerText = data.optFlR4;
-            document.getElementById('lbl-fl-exp').innerText = data.lblFlExp;
-            document.getElementById('lbl-fl-port').innerText = data.lblFlPort;
-            document.getElementById('lbl-fl-bio').innerText = data.lblFlBio;
-            document.getElementById('flBio').placeholder = data.phFlBio;
-            document.getElementById('btn-submit-fl').innerText = data.btnSubmitFl;
-
-            document.getElementById('cnt-title').innerText = data.cntTitle;
-            document.getElementById('cnt-desc').innerText = data.cntDesc;
-            document.getElementById('cnt-wa-title').innerText = data.cntWaTitle;
-            document.getElementById('cnt-wa-desc').innerText = data.cntWaDesc;
-            document.getElementById('cnt-wa-btn').innerText = data.cntWaBtn;
-
-            document.getElementById('footer-wa-link').innerText = data.footerWaLink;
-            document.getElementById('footer-text').innerText = data.footerText;
-        }
-
-        const dropZone = document.getElementById('dropZone');
-        
-        ['dragenter', 'dragover'].forEach(eventName => {
-            dropZone.addEventListener(eventName, (e) => {
-                e.preventDefault();
-                dropZone.classList.add('dragover');
-            }, false);
-        });
-
-        ['dragleave', 'drop'].forEach(eventName => {
-            dropZone.addEventListener(eventName, (e) => {
-                e.preventDefault();
-                dropZone.classList.remove('dragover');
-            }, false);
-        });
-
-        dropZone.addEventListener('drop', (e) => {
-            const dt = e.dataTransfer;
-            const files = dt.files;
-            if (files.length > 0) {
-                document.getElementById('fileInput').files = files;
-                updateFileDisplay(files[0]);
-            }
-        });
-
-        function handleFileSelect(event) {
-            const file = event.target.files[0];
-            if (file) {
-                updateFileDisplay(file);
-            }
-        }
-
-        function updateFileDisplay(file) {
-            document.getElementById('fileName').innerText = file.name;
-            document.getElementById('fileSize').innerText = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
-            document.getElementById('fileDetails').style.display = 'block';
-        }
-
-        function calculateTotal() {
-            const rate = parseFloat(document.getElementById('serviceSelect').value);
-            const duration = parseFloat(document.getElementById('durationInput').value) || 0;
-            const total = (rate * duration).toFixed(2);
-            document.getElementById('totalPrice').innerText = '$' + total;
-        }
-
-        function handleOrderSubmit(event) {
-            event.preventDefault();
-            const fileInput = document.getElementById('fileInput');
-            if (!fileInput.files || fileInput.files.length === 0) {
-                alert(i18n[currentLang].alertNoFile);
-                return;
-            }
-
-            document.getElementById('paymentModule').style.display = 'block';
-            window.scrollTo({
-                top: document.getElementById('paymentModule').offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
-
-        function confirmPayment() {
-            const txid = document.getElementById('txidInput').value.trim();
-            if (!txid) {
-                alert(i18n[currentLang].alertNoTxid);
-                return;
-            }
-            alert(i18n[currentLang].alertSuccess);
-        }
-
-        function handleFreelanceSubmit(event) {
-            event.preventDefault();
-            alert(i18n[currentLang].alertFlSuccess);
-            document.getElementById('freelanceForm').reset();
-        }
-    </script>
-</body>
-</html>
+                    <h3 id="upload-hint">Click to upload or
